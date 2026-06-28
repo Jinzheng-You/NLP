@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统主菜单 · 地书趣味交互系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% set nav_current = "menu" %}
+    {% include "_navbar.html" %}
+
+    <main class="menu-shell">
+        <section class="menu-hero">
+            <p class="eyebrow">系统主菜单</p>
+            <h1>地书趣味交互系统</h1>
+            <p class="menu-subtitle">用符号读懂世界，用谐音玩转语言</p>
+        </section>
+
+        <section class="module-grid" aria-label="功能模块">
+            <article class="module-card featured">
+                <div class="module-icon">游</div>
+                <div class="module-body">
+                    <h2>地书谐音梗小游戏</h2>
+                    <p>根据地书符号猜出隐藏的谐音梗和成语短语，在图像与语言之间寻找巧妙联系。</p>
+                    <p class="module-meta">{{ question_total }} 道题 · {{ symbol_total }} 个符号</p>
+                    <a class="button primary" href="{{ url_for('setup') }}">开始挑战</a>
+                </div>
+            </article>
+
+            <article class="module-card">
+                <div class="module-icon">译</div>
+                <div class="module-body">
+                    <h2>自然语言转图形语言</h2>
+                    <p>输入自然语言，可通过 API Key 生成地书标签序列并展示对应图片。</p>
+                    <p class="module-meta">语义匹配 · 图形长卷</p>
+                    <a class="button primary" href="{{ url_for('translator') }}">进入转换</a>
+                </div>
+            </article>
+
+            <article class="module-card">
+                <div class="module-icon">句</div>
+                <div class="module-body">
+                    <h2>符号造句工坊</h2>
+                    <p>随机抽取10个地书符号，任选符号完成拖动排序后，系统将翻译成有意义的趣味句子。</p>
+                    <p class="module-meta">地书心语 · 符号诗行</p>
+                    <a class="button primary" href="{{ url_for('symbol_sentence') }}">进入模块</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/sound.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

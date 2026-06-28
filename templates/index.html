@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地书 · 谐音梗挑战</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% set nav_current = "homophone" %}
+    {% include "_navbar.html" %}
+
+    <main>
+        <section class="home-hero">
+            <div class="hero-copy">
+                <p class="eyebrow">地书 · 谐音梗挑战</p>
+                <h1>看符号，猜谐音，破解一局地书脑洞。</h1>
+                <p class="intro">
+                    从 {{ symbol_total }} 个精选符号和 {{ question_total }} 道题里出发，用读音、画面和一点点梗感，把图像翻译成答案。
+                </p>
+                <div class="hero-actions">
+                    <a class="button primary" href="{{ url_for('setup') }}#game-setup">🎮 开始挑战</a>
+                    <a class="button ghost" href="{{ url_for('menu') }}">🧩 系统主菜单</a>
+                    <a class="button ghost" href="{{ url_for('rules') }}">📘 玩法说明</a>
+                    <a class="button ghost" href="{{ url_for('symbols') }}">🔎 浏览符号库</a>
+                </div>
+            </div>
+
+            <div class="sample-strip" aria-label="符号示例">
+                {% for symbol in sample_symbols %}
+                    <div class="sample-symbol">
+                        <img src="{{ url_for('image_file', filename=symbol.filename) }}" alt="{{ symbol.game_label }}">
+                        <span>{{ symbol.game_label }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="game-setup" class="setup-band {% if show_setup %}is-open{% endif %}">
+            <div class="section-heading">
+                <p class="eyebrow">开局设置</p>
+                <h2>选好难度，马上开猜。</h2>
+            </div>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-list" role="status">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <form class="setup-form" method="post" action="{{ url_for('setup') }}">
+                <label class="field">
+                    <span>玩家昵称</span>
+                    <input type="text" name="player" maxlength="24" placeholder="地书玩家" autocomplete="nickname">
+                </label>
+
+                <fieldset class="field">
+                    <legend>题目数量</legend>
+                    <div class="segmented">
+                        <label><input type="radio" name="question_count" value="10" checked><span>10</span></label>
+                        <label><input type="radio" name="question_count" value="20"><span>20</span></label>
+                        <label><input type="radio" name="question_count" value="50"><span>50</span></label>
+                        <label><input type="radio" name="question_count" value="all"><span>全部</span></label>
+                    </div>
+                </fieldset>
+
+                <div class="form-grid">
+                    <label class="field">
+                        <span>题目类型</span>
+                        <select name="question_type">
+                            <option value="all">全部题型</option>
+                            <option value="homophone_choice">谐音梗挑战（{{ type_counts.get('homophone_choice', 0) }}）</option>
+                            <option value="visual_idiom_choice">看图猜词（{{ type_counts.get('visual_idiom_choice', 0) }}）</option>
+                        </select>
+                    </label>
+
+                    <label class="field">
+                        <span>难度</span>
+                        <select name="difficulty">
+                            <option value="all">全部难度</option>
+                            <option value="easy">easy 简单（{{ difficulty_counts.get('easy', 0) }}）</option>
+                            <option value="medium">medium 中等（{{ difficulty_counts.get('medium', 0) }}）</option>
+                            <option value="hard">hard 困难（{{ difficulty_counts.get('hard', 0) }}）</option>
+                        </select>
+                    </label>
+                </div>
+
+                <label class="check-row">
+                    <input type="checkbox" name="randomize" checked>
+                    <span>随机出题</span>
+                </label>
+
+                <button class="button primary setup-submit" type="submit">🚀 进入游戏</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/sound.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('select').forEach(function(select) {
+                select.addEventListener('click', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                });
+                select.addEventListener('change', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                });
+            });
+
+            document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+                radio.addEventListener('click', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                });
+            });
+
+            document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+                checkbox.addEventListener('click', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

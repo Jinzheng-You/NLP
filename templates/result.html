@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏结果 · 地书谐音梗挑战</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% set nav_current = "homophone" %}
+    {% set nav_compact = true %}
+    {% include "_navbar.html" %}
+
+    <main class="result-shell">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-list" role="status">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <section class="result-summary">
+            <p class="eyebrow">挑战完成</p>
+            <h1>{{ game.player }}，你的地书破译报告来了。</h1>
+            <div class="summary-grid">
+                <div>
+                    <span>总题数</span>
+                    <strong>{{ total }}</strong>
+                </div>
+                <div>
+                    <span>答对题数</span>
+                    <strong>{{ correct_count }}</strong>
+                </div>
+                <div>
+                    <span>正确率</span>
+                    <strong>{{ "%.1f"|format(accuracy) }}%</strong>
+                </div>
+                <div>
+                    <span>最终得分</span>
+                    <strong>{{ format_score(game.score) }}</strong>
+                </div>
+            </div>
+            <div class="grade-badge">🏆 {{ grade }}</div>
+            <div class="result-actions">
+                <a class="button primary" href="{{ url_for('setup') }}">再来一局</a>
+                <form method="post" action="{{ url_for('retry_wrong') }}">
+                    <button class="button ghost" type="submit" {% if not wrong_records %}disabled{% endif %}>仅错题再练一次</button>
+                </form>
+                <a class="button ghost" href="{{ url_for('export_csv') }}">导出 CSV</a>
+                <a class="button ghost" href="{{ url_for('home') }}">返回首页</a>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <div class="section-heading">
+                <p class="eyebrow">错题回顾</p>
+                <h2>{% if wrong_records %}把这些梗再捋一遍{% else %}本局没有错题{% endif %}</h2>
+            </div>
+
+            {% if wrong_records %}
+                <div class="review-list">
+                    {% for record in wrong_records %}
+                        <article class="review-item">
+                            <div class="review-head">
+                                <strong>题号 {{ record.question_id }}</strong>
+                                <span>{{ type_label(record.type) }} · {{ difficulty_label(record.difficulty) }}</span>
+                            </div>
+                            <div class="mini-symbol-row">
+                                {% for symbol in record.symbols %}
+                                    <figure class="mini-symbol">
+                                        {% if image_exists(symbol.filename) %}
+                                            <img src="{{ url_for('image_file', filename=symbol.filename) }}" alt="{{ symbol.game_label }}">
+                                        {% else %}
+                                            <div class="missing-image small">图片缺失：{{ symbol.filename }}</div>
+                                        {% endif %}
+                                        <figcaption>{{ symbol.game_label }}</figcaption>
+                                    </figure>
+                                {% endfor %}
+                            </div>
+                            <p>你的选择：<strong>{{ record.user_answer }}</strong></p>
+                            <p>正确答案：<strong>{{ record.correct_answer }}</strong></p>
+                            <p class="explanation">{{ record.explanation }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="empty-note">这局命中率很漂亮，CSV 里也会保留完整答题记录。</p>
+            {% endif %}
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/sound.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                if (window.soundManager) {
+                    window.soundManager.playTrue();
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>

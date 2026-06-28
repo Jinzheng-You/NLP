@@ -1,0 +1,12 @@
+<header class="topbar{% if nav_compact|default(false) %} compact{% endif %}">
+    <a class="brand system-brand" href="{{ url_for('menu') }}">地书趣味交互系统</a>
+    {% if nav_current|default('') != 'menu' %}
+        <a class="button primary nav-return" href="{{ url_for('menu') }}">返回首页</a>
+    {% endif %}
+</header>
+
+<div class="floating-dishu-bg" aria-hidden="true" data-floating-dishu>
+    {% for symbol in floating_background_symbols() %}
+        <img src="{{ url_for('image_file', filename=symbol.filename) }}" alt="">
+    {% endfor %}
+</div>

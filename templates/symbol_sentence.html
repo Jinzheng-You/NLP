@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>符号造句工坊 - 地书趣味交互系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% set nav_current = "symbol_sentence" %}
+    {% set nav_compact = true %}
+    {% include "_navbar.html" %}
+
+    <main>
+        <section class="home-hero translator-landing">
+            <div class="hero-copy">
+                <p class="eyebrow">符号造句工坊</p>
+                <h1>随机符号，随心搭配，让地书图像有语义。</h1>
+                <p class="intro">
+                    填写 API Key后，可点击开始创作来随机抽取10个地书符号，拖动符号到工作区，完成创作后由指定API进行分析；不填写时使用本地接口进行分析。
+                </p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#workspace">开始创作</a>
+                    <a class="button ghost" href="{{ url_for('menu') }}">返回主菜单</a>
+                </div>
+            </div>
+
+            <div class="sample-strip" aria-label="符号示例">
+                {% for symbol in floating_symbols[:6] %}
+                    <div class="sample-symbol">
+                        <img src="{{ url_for('image_file', filename=symbol.filename) }}" alt="{{ symbol.game_label }}">
+                        <span>{{ symbol.game_label }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="workspace" class="translator-shell setup-band">
+            <div class="section-heading">
+                <p class="eyebrow">创作工作台</p>
+                <h2>拖动地书符号，按序解析语义</h2>
+            </div>
+
+            <div class="workspace-container">
+                <div class="translator-panel api-panel">
+                    <div class="section-heading compact-heading">
+                        <h2>API 设置</h2>
+                        <p class="subtle">填写 API Key 后使用远程服务分析，否则使用本地模式</p>
+                    </div>
+
+                    <div class="api-fields">
+                        <label class="field api-field">
+                            <span>API Key</span>
+                            <div class="translator-key-row">
+                                <input id="apiKeyInput" type="password" placeholder="可选">
+                                <button id="toggleKeyBtn" class="button ghost compact-button" type="button">显示</button>
+                            </div>
+                        </label>
+
+                        <label class="field api-field">
+                            <span>API 服务</span>
+                            <select id="providerSelect">
+                                <option value="deepseek">DeepSeek</option>
+                                <option value="doubao">豆包</option>
+                                <option value="qwen">通义千问</option>
+                                <option value="openai">OpenAI-compatible</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="translator-panel workspace-panel">
+                    <div class="section-heading compact-heading">
+                        <h2>随机地书符号</h2>
+                        <p class="subtle">点击"重新抽取"获取新的符号组合，拖动符号到下方工作区</p>
+                    </div>
+
+                    <div id="randomSymbolsGrid" class="symbol-grid">
+                        <!-- 2x5 布局的随机符号 -->
+                    </div>
+
+                    <button id="refreshSymbolsBtn" class="button ghost" type="button">重新抽取</button>
+
+                    <div class="workspace-divider"></div>
+
+                    <div class="section-heading compact-heading">
+                        <h2>创作工作区</h2>
+                        <p id="workspaceHint" class="subtle">从上方拖动符号到此处，按顺序排列</p>
+                    </div>
+
+                    <div id="workspaceDropZone" class="workspace-drop-zone">
+                        <div id="workspaceSequence" class="workspace-sequence">
+                            <!-- 用户排列的符号序列 -->
+                        </div>
+                        <div id="dropZonePlaceholder" class="drop-zone-placeholder">
+                            <div class="placeholder-icon">+</div>
+                            <p>拖动地书符号到这里</p>
+                            <p class="hint-text">按顺序排列，形成语义序列</p>
+                        </div>
+                    </div>
+
+                    <div class="workspace-actions">
+                        <button id="submitBtn" class="button primary dark-btn" type="button">完成创作</button>
+                        <button id="reanalyzeBtn" class="button ghost" type="button">重新分析</button>
+                        <button id="resetBtn" class="button ghost" type="button">重置创作</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="analysis-result" class="translator-shell result-band">
+            <div class="section-heading">
+                <p class="eyebrow">分析结果</p>
+                <h2>地书符号的语义解析</h2>
+            </div>
+
+            <div class="analysis-container">
+                <div class="translator-panel analysis-panel">
+                    <div class="section-heading compact-heading">
+                        <h2>自然语言翻译</h2>
+                    </div>
+
+                    <div id="analysisLoading" class="translator-loading hidden"><span>正在分析符号序列...</span></div>
+                    
+                    <div id="analysisResult" class="analysis-result-content">
+                        <div class="empty-note">完成创作后，点击"完成创作"按钮获取分析结果</div>
+                    </div>
+
+                    <div class="analysis-stats">
+                        <div class="stat-card">
+                            <span class="stat-value" id="semanticScore">--</span>
+                            <span class="stat-label">语义连贯性</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value" id="creativityScore">--</span>
+                            <span class="stat-label">创意评分</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value" id="symbolCount">0</span>
+                            <span class="stat-label">符号数量</span>
+                        </div>
+                    </div>
+
+                    <div class="analysis-divider"></div>
+
+                    <div class="section-heading compact-heading">
+                        <h2>生成标签</h2>
+                    </div>
+
+                    <div id="generatedTags" class="tags-container">
+                        <div class="empty-note">等待分析...</div>
+                    </div>
+
+                    <div class="section-heading compact-heading">
+                        <h2>解析详情</h2>
+                    </div>
+
+                    <div id="analysisDetails" class="analysis-details">
+                        <div class="empty-note">等待分析...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="{{ url_for('static', filename='js/sound.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const symbolsGrid = document.getElementById('randomSymbolsGrid');
+            const workspaceDropZone = document.getElementById('workspaceDropZone');
+            const workspaceSequence = document.getElementById('workspaceSequence');
+            const refreshBtn = document.getElementById('refreshSymbolsBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            const reanalyzeBtn = document.getElementById('reanalyzeBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const analysisResult = document.getElementById('analysisResult');
+            const analysisLoading = document.getElementById('analysisLoading');
+            const semanticScore = document.getElementById('semanticScore');
+            const creativityScore = document.getElementById('creativityScore');
+            const symbolCount = document.getElementById('symbolCount');
+            const generatedTags = document.getElementById('generatedTags');
+            const analysisDetails = document.getElementById('analysisDetails');
+            const placeholder = document.getElementById('dropZonePlaceholder');
+
+            let currentSymbols = [];
+            let workspaceSymbols = [];
+
+            const availableSymbols = {{ symbol_items | tojson | safe }};
+
+            function shuffleArray(array) {
+                const shuffled = [...array];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                return shuffled;
+            }
+
+            function renderSymbols() {
+                symbolsGrid.innerHTML = '';
+                currentSymbols = shuffleArray(availableSymbols).slice(0, 10);
+                
+                currentSymbols.forEach((symbol, index) => {
+                    const symbolElement = document.createElement('div');
+                    symbolElement.className = 'draggable-symbol';
+                    symbolElement.draggable = true;
+                    symbolElement.dataset.index = index;
+                    symbolElement.dataset.filename = symbol.filename;
+                    symbolElement.innerHTML = `
+                        <img src="{{ url_for('image_file', filename='') }}${symbol.filename}" alt="${symbol.game_label}">
+                        <span>${symbol.game_label}</span>
+                    `;
+                    symbolElement.addEventListener('dragstart', handleDragStart);
+                    symbolsGrid.appendChild(symbolElement);
+                });
+            }
+
+            function handleDragStart(e) {
+                const target = e.target.closest('.draggable-symbol');
+                if (!target) return;
+                const index = target.dataset.index;
+                e.dataTransfer.setData('text/plain', index);
+                e.dataTransfer.effectAllowed = 'copy';
+                e.dataTransfer.setData('application/json', JSON.stringify(currentSymbols[index]));
+            }
+
+            workspaceDropZone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                e.dataTransfer.dropEffect = 'copy';
+                this.classList.add('dragover');
+            });
+
+            workspaceDropZone.addEventListener('dragleave', function(e) {
+                const rect = this.getBoundingClientRect();
+                if (e.clientX <= rect.left || e.clientX >= rect.right ||
+                    e.clientY <= rect.top || e.clientY >= rect.bottom) {
+                    this.classList.remove('dragover');
+                }
+            });
+
+            workspaceDropZone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('dragover');
+                
+                try {
+                    const symbolData = JSON.parse(e.dataTransfer.getData('application/json'));
+                    
+                    if (symbolData && !workspaceSymbols.find(s => s.filename === symbolData.filename)) {
+                        workspaceSymbols.push({...symbolData, order: workspaceSymbols.length});
+                        renderWorkspace();
+                    } else if (symbolData) {
+                        showToast('该符号已添加到工作区');
+                    }
+                } catch (err) {
+                    const index = parseInt(e.dataTransfer.getData('text/plain'));
+                    if (!isNaN(index) && currentSymbols[index]) {
+                        const symbol = currentSymbols[index];
+                        if (!workspaceSymbols.find(s => s.filename === symbol.filename)) {
+                            workspaceSymbols.push({...symbol, order: workspaceSymbols.length});
+                            renderWorkspace();
+                        } else {
+                            showToast('该符号已添加到工作区');
+                        }
+                    }
+                }
+            });
+
+            function renderWorkspace() {
+                workspaceSequence.innerHTML = '';
+                
+                if (workspaceSymbols.length > 0) {
+                    placeholder.classList.add('hidden');
+                    
+                    workspaceSymbols.forEach((symbol, index) => {
+                        const item = document.createElement('div');
+                        item.className = 'workspace-item';
+                        item.dataset.order = index;
+                        item.innerHTML = `
+                            <img src="{{ url_for('image_file', filename='') }}${symbol.filename}" alt="${symbol.game_label}">
+                            <span>${symbol.game_label}</span>
+                            <button class="remove-btn" data-index="${index}">×</button>
+                        `;
+                        workspaceSequence.appendChild(item);
+                    });
+
+                    document.querySelectorAll('.remove-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const idx = parseInt(this.dataset.index);
+                            workspaceSymbols.splice(idx, 1);
+                            workspaceSymbols = workspaceSymbols.map((s, i) => ({...s, order: i}));
+                            renderWorkspace();
+                        });
+                    });
+                } else {
+                    placeholder.classList.remove('hidden');
+                }
+                symbolCount.textContent = workspaceSymbols.length;
+            }
+
+            refreshBtn.addEventListener('click', function() {
+                renderSymbols();
+                const newImages = currentSymbols.map(s => `/images/${s.filename}`);
+                if (newImages.length > 0) {
+                    setTimeout(() => {
+                        window.playDishuBarrage(newImages, { count: 20 });
+                    }, 100);
+                }
+            });
+
+            resetBtn.addEventListener('click', function() {
+                workspaceSymbols = [];
+                renderWorkspace();
+                analysisResult.innerHTML = '<div class="empty-note">完成创作后，点击"完成创作"按钮获取分析结果</div>';
+                generatedTags.innerHTML = '<div class="empty-note">等待分析...</div>';
+                analysisDetails.innerHTML = '<div class="empty-note">等待分析...</div>';
+                semanticScore.textContent = '--';
+                creativityScore.textContent = '--';
+            });
+
+            submitBtn.addEventListener('click', function() {
+                if (workspaceSymbols.length === 0) {
+                    showToast('请先添加至少一个符号到工作区');
+                    if (window.soundManager) window.soundManager.playFalse();
+                    return;
+                }
+
+                analysisLoading.classList.remove('hidden');
+                analysisResult.innerHTML = '';
+
+                const apiKey = document.getElementById('apiKeyInput').value;
+                const provider = document.getElementById('providerSelect').value;
+                const labels = workspaceSymbols.map(s => s.game_label);
+
+                fetch('/api/symbol-sentence/analyze', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        labels: labels,
+                        api_key: apiKey,
+                        provider: provider
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    analysisLoading.classList.add('hidden');
+                    
+                    if (data.success) {
+                        if (window.soundManager) window.soundManager.playTrue();
+                        analysisResult.innerHTML = `
+                            <div class="result-text">
+                                <p class="result-title">解析结果</p>
+                                <p class="result-content">${data.translation || '暂无翻译结果'}</p>
+                            </div>
+                            <div class="result-explanation">
+                                <p class="explanation-title">解析说明</p>
+                                <p>${data.explanation || '暂无解析说明'}</p>
+                            </div>
+                            <div class="result-story">
+                                <p class="story-title">📖 故事拓展</p>
+                                <p>${data.story || '暂无故事拓展'}</p>
+                            </div>
+                        `;
+                        
+                        semanticScore.textContent = data.semantic_score || '--';
+                        creativityScore.textContent = data.creativity_score || '--';
+                        
+                        generatedTags.innerHTML = '';
+                        (data.tags || []).forEach(tag => {
+                            const tagElement = document.createElement('span');
+                            tagElement.className = 'tag';
+                            tagElement.textContent = tag;
+                            generatedTags.appendChild(tagElement);
+                        });
+                        
+                        analysisDetails.innerHTML = `
+                            <div class="detail-item">
+                                <span class="detail-label">来源</span>
+                                <span class="detail-value">${data.source || '本地'}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">符号序列</span>
+                                <span class="detail-value">${labels.join(' → ')}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">分析时间</span>
+                                <span class="detail-value">${new Date().toLocaleString()}</span>
+                            </div>
+                        `;
+                    } else {
+                        if (window.soundManager) window.soundManager.playFalse();
+                        analysisResult.innerHTML = `<div class="error-note">${data.error || '分析失败'}</div>`;
+                    }
+                })
+                .catch(error => {
+                    analysisLoading.classList.add('hidden');
+                    if (window.soundManager) window.soundManager.playFalse();
+                    analysisResult.innerHTML = `<div class="error-note">分析请求失败: ${error.message}</div>`;
+                });
+            });
+
+            reanalyzeBtn.addEventListener('click', function() {
+                if (workspaceSymbols.length > 0) {
+                    submitBtn.click();
+                } else {
+                    showToast('请先添加符号到工作区');
+                    if (window.soundManager) window.soundManager.playFalse();
+                }
+            });
+
+            function showToast(message) {
+                const toast = document.getElementById('toast');
+                toast.textContent = message;
+                toast.classList.remove('hidden');
+                setTimeout(() => toast.classList.add('hidden'), 3000);
+            }
+
+            renderSymbols();
+
+            document.querySelectorAll('select').forEach(function(select) {
+                select.addEventListener('click', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                });
+                select.addEventListener('change', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

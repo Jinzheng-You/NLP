@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自然语言转地书 · 地书趣味交互系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% set nav_current = "translator" %}
+    {% set nav_compact = true %}
+    {% include "_navbar.html" %}
+
+    <main>
+        <section class="home-hero translator-landing">
+            <div class="hero-copy">
+                <p class="eyebrow">自然语言转地书图形语言</p>
+                <h1>输入一句话，生成一卷会说话的地书图像。</h1>
+                <p class="intro">
+                    填写 API Key 后，由所选 API 服务把自然语言转换为地书标签序列，系统再匹配对应图片；不填写时使用本地匹配。
+                </p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#translator-workspace">开始转换</a>
+                    <a class="button ghost" href="{{ url_for('menu') }}">返回主菜单</a>
+                </div>
+            </div>
+
+            <div class="sample-strip" aria-label="符号示例">
+                {% for symbol in floating_symbols[:6] %}
+                    <div class="sample-symbol">
+                        <img src="{{ url_for('image_file', filename=symbol.filename) }}" alt="{{ symbol.game_label }}">
+                        <span>{{ symbol.game_label }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="translator-workspace" class="translator-shell setup-band">
+            <div class="section-heading">
+                <p class="eyebrow">转换工作台</p>
+                <h2>写下句子，生成地书符号长卷。</h2>
+            </div>
+
+            <div class="translator-grid">
+                <aside class="translator-panel">
+                    <div class="section-heading compact-heading">
+                        <h2>输入</h2>
+                        <p class="subtle">填写 API Key 后由所选 API 服务完成语义转换。</p>
+                    </div>
+
+                    <label class="field">
+                        <span>自然语言</span>
+                        <textarea id="textInput" class="translator-textarea" placeholder="例如：我今天很开心，想和朋友一起出去玩。"></textarea>
+                    </label>
+
+                    <label class="field">
+                        <span>API Key</span>
+                        <div class="translator-key-row">
+                            <input id="apiKeyInput" type="password" placeholder="可选">
+                            <button id="toggleKeyBtn" class="button ghost compact-button" type="button">显示</button>
+                        </div>
+                    </label>
+
+                    <label class="field">
+                        <span>API 服务</span>
+                        <select id="providerSelect">
+                            <option value="deepseek">DeepSeek</option>
+                            <option value="doubao">豆包</option>
+                            <option value="qwen">通义千问</option>
+                            <option value="openai">OpenAI-compatible</option>
+                        </select>
+                    </label>
+
+                    <div class="translator-actions">
+                        <button id="translateBtn" class="button primary" type="button">转换为地书语言</button>
+                        <button id="regenBtn" class="button ghost" type="button">重新生成</button>
+                        <button id="clearBtn" class="button ghost" type="button">清空</button>
+                    </div>
+                </aside>
+
+                <section class="translator-panel">
+                    <div class="translator-result-head">
+                        <div class="section-heading compact-heading">
+                            <h2>转换结果</h2>
+                            <p id="explanationText" class="subtle">等待输入。</p>
+                        </div>
+                        <button id="copyBtn" class="button ghost compact-button" type="button">复制标签</button>
+                    </div>
+
+                    <div id="loadingBox" class="translator-loading hidden"><span id="loadingText">正在匹配地书符号...</span></div>
+                    <div id="visualScroll" class="translator-symbol-scroll">
+                        <div class="empty-note">等待符号长卷生成。</div>
+                    </div>
+
+                    <div class="translator-info-grid">
+                        <div>
+                            <span>用户原文</span>
+                            <strong id="originalText">等待输入</strong>
+                        </div>
+                        <div>
+                            <span>地书标签序列</span>
+                            <strong id="labelSequence">尚未生成</strong>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid translator-stats">
+                        <div><span id="matchedCount">0</span><small>匹配成功</small></div>
+                        <div><span id="missingCount">0</span><small>缺失标签</small></div>
+                        <div><span id="totalLabels">{{ translator_stats.label_count }}</span><small>标签总数</small></div>
+                        <div><span id="totalImages">{{ translator_stats.image_count }}</span><small>图片总数</small></div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <div id="previewModal" class="translator-modal hidden">
+        <div class="translator-modal-backdrop"></div>
+        <div class="translator-modal-content">
+            <button id="closeModalBtn" class="button ghost compact-button" type="button">关闭</button>
+            <img id="previewImage" alt="地书图片预览">
+            <p id="previewLabel"></p>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="{{ url_for('static', filename='js/sound.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/translator.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('select').forEach(function(select) {
+                select.addEventListener('click', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                });
+                select.addEventListener('change', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

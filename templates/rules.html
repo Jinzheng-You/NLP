@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玩法说明 · 地书谐音梗挑战</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% set nav_current = "rules" %}
+    {% set nav_compact = true %}
+    {% include "_navbar.html" %}
+
+    <main class="rules-shell">
+        <section class="rules-hero">
+            <p class="eyebrow">玩法说明</p>
+            <h1>把图像当作文字，把读音变成答案。</h1>
+            <p>每题会展示一个或多个地书符号，你需要从四个选项中选出最合理的词语、成语或祝福语。</p>
+        </section>
+
+        <section class="rule-grid">
+            <article class="rule-card">
+                <h2>🧩 homophone_choice</h2>
+                <p>根据符号的读音和谐音联想答案。例如“鱼”可以联想到“余”，再组合成祝福语。</p>
+            </article>
+            <article class="rule-card">
+                <h2>👀 visual_idiom_choice</h2>
+                <p>根据符号含义和画面组合猜成语或短语，重点看图像之间的关系。</p>
+            </article>
+            <article class="rule-card">
+                <h2>🏆 计分规则</h2>
+                <p>easy 答对 +10 分，medium 答对 +15 分，hard 答对 +20 分；答错不扣分。</p>
+            </article>
+            <article class="rule-card">
+                <h2>💡 提示规则</h2>
+                <p>每题可以查看一次提示。使用提示后答对，本题只获得一半分数。</p>
+            </article>
+        </section>
+
+        <section class="rules-note">
+            <h2>图片说明</h2>
+            <p>题目中的图片会按 <strong>auto_cut_segments / filename</strong> 读取。若图片不存在，页面会显示“图片缺失：xxx.jpg”，游戏仍可继续。</p>
+            <a class="button primary" href="{{ url_for('setup') }}">🎮 开始挑战</a>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/sound.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

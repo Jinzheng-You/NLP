@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Music Player</title>
+    <style>
+        body { margin: 0; padding: 0; overflow: hidden; }
+    </style>
+</head>
+<body>
+    <audio id="bgMusic" src="/music/bgMusic.mp3" loop>
+    
+    <script>
+        const audio = document.getElementById('bgMusic');
+        audio.volume = 0.3;
+        
+        let hasUserInteraction = false;
+        let lastPlayTime = 0;
+        const SESSION_KEY = 'dishu_music_position';
+        
+        const loadPosition = () => {
+            try {
+                const saved = sessionStorage.getItem(SESSION_KEY);
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    const now = Date.now();
+                    const elapsed = now - data.timestamp;
+                    audio.currentTime = data.position + (elapsed / 1000);
+                    console.log('Loaded music position:', audio.currentTime.toFixed(2), 'seconds');
+                }
+            } catch (e) {
+                console.warn('Failed to load music position:', e);
+            }
+        };
+        
+        const savePosition = () => {
+            try {
+                sessionStorage.setItem(SESSION_KEY, JSON.stringify({
+                    position: audio.currentTime,
+                    timestamp: Date.now()
+                }));
+            } catch (e) {
+                console.warn('Failed to save music position:', e);
+            }
+        };
+        
+        const checkAndPlay = () => {
+            if (!hasUserInteraction) {
+                hasUserInteraction = true;
+                loadPosition();
+                audio.play().then(() => {
+                    console.log('Background music started');
+                    lastPlayTime = Date.now();
+                    setInterval(savePosition, 1000);
+                }).catch(e => {
+                    console.warn('Failed to play music:', e);
+                });
+            }
+        };
+        
+        window.addEventListener('message', (event) => {
+            if (event.data === 'play') {
+                checkAndPlay();
+            } else if (event.data === 'pause') {
+                audio.pause();
+                savePosition();
+            } else if (event.data === 'toggle') {
+                if (audio.paused) {
+                    checkAndPlay();
+                } else {
+                    audio.pause();
+                    savePosition();
+                }
+            }
+        });
+        
+        document.addEventListener('click', checkAndPlay);
+        document.addEventListener('keydown', checkAndPlay);
+        document.addEventListener('touchstart', checkAndPlay);
+        
+        window.addEventListener('beforeunload', savePosition);
+    </script>
+</body>
+</html>

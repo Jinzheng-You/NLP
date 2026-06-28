@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地书谐音梗挑战</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% set nav_current = "homophone" %}
+    {% set nav_compact = true %}
+    {% include "_navbar.html" %}
+
+    <main class="game-shell">
+        <section class="game-status">
+            <div>
+                <span class="meta-label">进度</span>
+                <strong id="progress">第 {{ current_number }} / {{ total }}</strong>
+            </div>
+            <div>
+                <span class="meta-label">当前得分</span>
+                <strong id="score">{{ format_score(game.score) }}</strong>
+            </div>
+            <div>
+                <span class="meta-label">题型</span>
+                <strong>{{ type_label(question.type) }}</strong>
+            </div>
+            <div>
+                <span class="meta-label">难度</span>
+                <strong>{{ difficulty_label(question.difficulty) }}</strong>
+            </div>
+        </section>
+
+        <section class="question-stage">
+            <div class="symbol-row">
+                {% for symbol in question.symbols %}
+                    <figure class="symbol-tile">
+                        {% if image_exists(symbol.filename) %}
+                            <img src="{{ url_for('image_file', filename=symbol.filename) }}" alt="{{ symbol.game_label }}">
+                        {% else %}
+                            <div class="missing-image">图片缺失：{{ symbol.filename }}</div>
+                        {% endif %}
+                        <figcaption>{{ symbol.game_label }}</figcaption>
+                    </figure>
+                {% endfor %}
+            </div>
+
+            <div class="option-grid" aria-label="答案选项">
+                {% for option in question.options %}
+                    {% set option_state = "" %}
+                    {% if game.answered %}
+                        {% if option == question.answer %}
+                            {% set option_state = "is-correct" %}
+                        {% elif current_record and option == current_record.user_answer %}
+                            {% set option_state = "is-wrong" %}
+                        {% endif %}
+                    {% endif %}
+                    <button class="option-button {{ option_state }}" 
+                            data-option="{{ option }}" 
+                            {% if game.answered %}disabled{% endif %}>
+                        {{ option }}
+                    </button>
+                {% endfor %}
+            </div>
+
+            <div class="hint-area" {% if game.answered %}style="display: none;"{% endif %}>
+                {% if not game.answered %}
+                    <button class="button hint-button" id="hintBtn">💡 查看提示</button>
+                {% endif %}
+                {% if game.used_hint and not game.answered %}
+                    <div class="hint-box">
+                        <strong>提示</strong>
+                        <p>{{ question.hint }}</p>
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if game.answered and current_record %}
+                <section class="feedback {% if current_record.correct %}correct{% else %}wrong{% endif %}">
+                    <h2>{% if current_record.correct %}回答正确！{% else %}回答错误{% endif %}</h2>
+                    <p>正确答案：<strong>{{ question.answer }}</strong></p>
+                    <p>本题得分：<strong>{{ format_score(current_record.earned_score) }}</strong></p>
+                    <p>{{ question.explanation }}</p>
+                </section>
+
+                <button class="button primary nextBtn">
+                    {% if current_number >= total %}🏆 查看结果{% else %}下一题{% endif %}
+                </button>
+            {% endif %}
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/sound.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        var gameData = {
+            currentNumber: {{ current_number }},
+            total: {{ total }},
+            questionId: "{{ question.id }}",
+            isAnswered: {{ 'true' if game.answered else 'false' }},
+            questionType: "{{ question.type }}",
+            difficulty: "{{ question.difficulty }}",
+            answer: "{{ question.answer }}",
+            hint: {{ question.hint | tojson }},
+            explanation: {{ question.explanation | tojson }}
+        };
+
+        function playFeedbackSound(isCorrect) {
+            if (window.soundManager) {
+                if (isCorrect) {
+                    window.soundManager.playTrue();
+                } else {
+                    window.soundManager.playFalse();
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var feedback = document.querySelector('.feedback');
+            if (feedback) {
+                if (feedback.classList.contains('correct')) {
+                    setTimeout(function() { playFeedbackSound(true); }, 200);
+                } else if (feedback.classList.contains('wrong')) {
+                    setTimeout(function() { playFeedbackSound(false); }, 200);
+                }
+            }
+
+            document.querySelectorAll('.option-button').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    if (btn.disabled) return;
+                    if (window.soundManager) window.soundManager.playClick();
+                    submitAnswer(btn.dataset.option);
+                });
+            });
+
+            document.getElementById('hintBtn').addEventListener('click', function() {
+                if (window.soundManager) window.soundManager.playClick();
+                showHint();
+            });
+
+            var nextBtn = document.querySelector('.nextBtn');
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                    goNext();
+                });
+            }
+        });
+
+        function submitAnswer(option) {
+            var buttons = document.querySelectorAll('.option-button');
+            buttons.forEach(function(btn) { btn.disabled = true; });
+
+            fetch('/api/game/answer', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ option: option })
+            })
+            .then(function(response) { return response.json(); })
+            .then(function(data) {
+                updateAnswerResult(data);
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+                window.location.reload();
+            });
+        }
+
+        function showHint() {
+            fetch('/api/game/hint', { method: 'POST' })
+            .then(function(response) { return response.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    document.querySelector('.hint-area').innerHTML = `
+                        <div class="hint-box">
+                            <strong>提示</strong>
+                            <p>${data.hint}</p>
+                        </div>
+                    `;
+                }
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+            });
+        }
+
+        function goNext() {
+            fetch('/api/game/next', { method: 'POST' })
+            .then(function(response) { return response.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    if (data.finished) {
+                        window.location.href = data.redirect_url;
+                    } else {
+                        updateQuestion(data);
+                    }
+                } else {
+                    console.error('Error:', data.error);
+                    window.location.href = '/result';
+                }
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+                window.location.href = '/result';
+            });
+        }
+
+        function updateAnswerResult(data) {
+            var optionButtons = document.querySelectorAll('.option-button');
+            optionButtons.forEach(function(btn) {
+                btn.classList.remove('is-correct', 'is-wrong');
+                if (btn.dataset.option === data.correct_answer) {
+                    btn.classList.add('is-correct');
+                } else if (btn.dataset.option === data.user_answer && !data.correct) {
+                    btn.classList.add('is-wrong');
+                }
+            });
+
+            document.getElementById('score').textContent = data.score;
+
+            var hintArea = document.querySelector('.hint-area');
+            if (hintArea) {
+                hintArea.style.display = 'none';
+            }
+
+            var feedbackSection = document.createElement('section');
+            feedbackSection.className = 'feedback ' + (data.correct ? 'correct' : 'wrong');
+            feedbackSection.innerHTML = `
+                <h2>${data.correct ? '回答正确！' : '回答错误'}</h2>
+                <p>正确答案：<strong>${data.correct_answer}</strong></p>
+                <p>本题得分：<strong>${data.earned_score}</strong></p>
+                <p>${data.explanation}</p>
+            `;
+
+            var questionStage = document.querySelector('.question-stage');
+            questionStage.appendChild(feedbackSection);
+
+            var nextBtn = document.createElement('button');
+            nextBtn.className = 'button primary nextBtn';
+            nextBtn.textContent = gameData.currentNumber >= gameData.total ? '🏆 查看结果' : '下一题';
+            nextBtn.addEventListener('click', function() {
+                if (window.soundManager) window.soundManager.playClick();
+                goNext();
+            });
+            questionStage.appendChild(nextBtn);
+
+            playFeedbackSound(data.correct);
+        }
+
+        function updateQuestion(data) {
+            gameData.currentNumber = data.current_number;
+            gameData.total = data.total;
+            gameData.questionId = data.question.id;
+            gameData.answer = data.question.answer;
+            gameData.hint = data.question.hint;
+            gameData.explanation = data.question.explanation;
+
+            document.getElementById('progress').textContent = '第 ' + data.current_number + ' / ' + data.total;
+
+            var symbolRow = document.querySelector('.symbol-row');
+            symbolRow.innerHTML = '';
+            data.question.symbols.forEach(function(symbol) {
+                var figure = document.createElement('figure');
+                figure.className = 'symbol-tile';
+                figure.innerHTML = `
+                    <img src="/images/${symbol.filename}" alt="${symbol.game_label}">
+                    <figcaption>${symbol.game_label}</figcaption>
+                `;
+                symbolRow.appendChild(figure);
+            });
+
+            var optionGrid = document.querySelector('.option-grid');
+            optionGrid.innerHTML = '';
+            data.question.options.forEach(function(option) {
+                var button = document.createElement('button');
+                button.className = 'option-button';
+                button.dataset.option = option;
+                button.textContent = option;
+                button.addEventListener('click', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                    submitAnswer(option);
+                });
+                optionGrid.appendChild(button);
+            });
+
+            var hintArea = document.querySelector('.hint-area');
+            hintArea.style.display = 'block';
+            hintArea.innerHTML = `
+                <button class="button hint-button" id="hintBtn">💡 查看提示</button>
+            `;
+            document.getElementById('hintBtn').addEventListener('click', function() {
+                if (window.soundManager) window.soundManager.playClick();
+                showHint();
+            });
+
+            var feedback = document.querySelector('.feedback');
+            if (feedback) feedback.remove();
+            var nextBtn = document.querySelector('.nextBtn');
+            if (nextBtn) nextBtn.remove();
+        }
+    </script>
+</body>
+</html>

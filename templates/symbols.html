@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>符号库浏览 · 地书谐音梗挑战</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% set nav_current = "symbols" %}
+    {% set nav_compact = true %}
+    {% include "_navbar.html" %}
+
+    <main class="symbols-shell">
+        <section class="section-heading">
+            <p class="eyebrow">符号库</p>
+            <h1>浏览 {{ total_symbols }} 个地书符号</h1>
+            <p class="subtle">当前显示 {{ filtered_count }} 个</p>
+        </section>
+
+        <form class="filter-bar" method="get" action="{{ url_for('symbols') }}" data-live-filter>
+            <label class="field search-field">
+                <span>搜索 label / game_label</span>
+                <input type="search" name="q" value="{{ query }}" placeholder="输入符号名称">
+            </label>
+            <label class="field category-field">
+                <span>分类</span>
+                <select name="category">
+                    <option value="all" {% if selected_category == "all" %}selected{% endif %}>全部分类</option>
+                    {% for category in categories %}
+                        <option value="{{ category }}" {% if selected_category == category %}selected{% endif %}>{{ category }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <button class="button primary" type="submit">筛选</button>
+        </form>
+
+        {% if symbols %}
+            <section class="symbol-card-grid" aria-label="符号卡片列表">
+                {% for symbol in symbols %}
+                    <article class="symbol-card">
+                        <div class="symbol-card-image">
+                            {% if image_exists(symbol.filename) %}
+                                <img src="{{ url_for('image_file', filename=symbol.filename) }}" alt="{{ symbol.game_label }}">
+                            {% else %}
+                                <div class="missing-image">图片缺失：{{ symbol.filename }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="symbol-card-body">
+                            <h2>{{ symbol.game_label }}</h2>
+                            <dl>
+                                <div><dt>filename</dt><dd>{{ symbol.filename }}</dd></div>
+                                <div><dt>label</dt><dd>{{ symbol.label }}</dd></div>
+                                <div><dt>category</dt><dd>{{ symbol.category }}</dd></div>
+                                <div><dt>pinyin</dt><dd>{{ symbol.pinyin }}</dd></div>
+                                <div><dt>homophones</dt><dd>{{ symbol.homophones|cn_list }}</dd></div>
+                                <div><dt>use_note</dt><dd>{{ symbol.use_note }}</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        {% else %}
+            <p class="empty-note">没有找到匹配的符号，换个关键词试试。</p>
+        {% endif %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/sound.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('select').forEach(function(select) {
+                select.addEventListener('click', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                });
+                select.addEventListener('change', function() {
+                    if (window.soundManager) window.soundManager.playClick();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
