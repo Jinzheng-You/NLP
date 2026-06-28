@@ -1,0 +1,2627 @@
+{
+  "metadata": {
+    "source_file": "labels_1_end_merged.json",
+    "base_file": "usable_symbols_selected.json",
+    "source_items_count": 11467,
+    "base_items_count": 75,
+    "added_items_count": 129,
+    "items_count": 175,
+    "selection_rule": "在原75条人工精选库基础上，从完整合并JSON中继续筛选适合谐音梗/看图猜词的具体物体、动物、自然、交通、动作、情绪等符号；继续过滤空白、标点、黑块、接口控件、未识别、重复度高且难以造梗的噪声。",
+    "filename_policy": "filename字段完全沿用原始JSON，不做重命名。",
+    "category_counts": {
+      "交通": 8,
+      "人物": 3,
+      "动作": 14,
+      "动物": 28,
+      "图形": 1,
+      "建筑": 7,
+      "情绪": 11,
+      "时间": 3,
+      "物品": 39,
+      "电子设备": 9,
+      "符号": 2,
+      "自然": 20,
+      "自然物": 1,
+      "身体": 8,
+      "食物": 11,
+      "饮品": 10
+    },
+    "removed_item_count_latest_operation": 12,
+    "removed_identifiers_latest_operation": [
+      1232,
+      1496,
+      1782,
+      1843,
+      2677,
+      2927,
+      3596,
+      3761,
+      5010,
+      9434,
+      9619,
+      11775
+    ],
+    "removal_match_rule_latest_operation": "同时按 index 和 filename 编号匹配删除；例如 9434 可匹配 filename=009434.jpg。"
+  },
+  "items": [
+    {
+      "index": 53,
+      "filename": "000053.jpg",
+      "label": "房子",
+      "status": "api_ok",
+      "game_label": "房子",
+      "category": "建筑",
+      "pinyin": "fang",
+      "homophones": [
+        "防"
+      ],
+      "use_note": "可用于场景题",
+      "source": "base_selected"
+    },
+    {
+      "index": 57,
+      "filename": "000057.jpg",
+      "label": "高楼大厦",
+      "status": "api_ok",
+      "game_label": "高楼",
+      "category": "建筑",
+      "pinyin": "gao",
+      "homophones": [
+        "高",
+        "糕"
+      ],
+      "use_note": "可用于“高升、楼上见”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 90,
+      "filename": "000090.jpg",
+      "label": "邮件",
+      "status": "api_ok",
+      "game_label": "邮件",
+      "category": "电子设备",
+      "pinyin": "you_jian",
+      "homophones": [
+        "有"
+      ],
+      "use_note": "可用于“邮你真好”",
+      "source": "base_selected"
+    },
+    {
+      "index": 130,
+      "filename": "000130.jpg",
+      "label": "对话气泡",
+      "status": "api_ok",
+      "game_label": "对话气泡",
+      "category": "电子设备",
+      "pinyin": "dui_hua",
+      "homophones": [
+        "谈",
+        "话"
+      ],
+      "use_note": "可用于“无稽之谈”",
+      "source": "base_selected"
+    },
+    {
+      "index": 166,
+      "filename": "000166.jpg",
+      "label": "钟表",
+      "status": "api_ok",
+      "game_label": "钟表",
+      "category": "时间",
+      "pinyin": "zhong",
+      "homophones": [
+        "钟",
+        "终"
+      ],
+      "use_note": "可用于“一见钟情、机不可失”",
+      "source": "base_selected"
+    },
+    {
+      "index": 218,
+      "filename": "000218.jpg",
+      "label": "面条",
+      "status": "api_ok",
+      "game_label": "面条",
+      "category": "食物",
+      "pinyin": "mian",
+      "homophones": [
+        "面"
+      ],
+      "use_note": "可用于食物题",
+      "source": "base_selected"
+    },
+    {
+      "index": 220,
+      "filename": "000220.jpg",
+      "label": "磁带",
+      "status": "api_ok",
+      "game_label": "磁带",
+      "category": "物品",
+      "pinyin": "ci_dai",
+      "homophones": [
+        "期待",
+        "磁带"
+      ],
+      "use_note": "可用于“期待/磁带”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 222,
+      "filename": "000222.jpg",
+      "label": "熨斗",
+      "status": "api_ok",
+      "game_label": "熨斗",
+      "category": "物品",
+      "pinyin": "yun_dou",
+      "homophones": [
+        "运",
+        "斗"
+      ],
+      "use_note": "可用于“运斗/熨斗”创意题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 244,
+      "filename": "000244.jpg",
+      "label": "礼物盒",
+      "status": "api_ok",
+      "game_label": "礼物盒",
+      "category": "物品",
+      "pinyin": "li_wu",
+      "homophones": [
+        "礼",
+        "理"
+      ],
+      "use_note": "可用于祝福类题",
+      "source": "base_selected"
+    },
+    {
+      "index": 295,
+      "filename": "000295.jpg",
+      "label": "打印机",
+      "status": "api_ok",
+      "game_label": "打印机",
+      "category": "物品",
+      "pinyin": "da_yin",
+      "homophones": [
+        "答应",
+        "打印"
+      ],
+      "use_note": "可用于“答应/打印”谐音题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 322,
+      "filename": "000322.jpg",
+      "label": "马桶",
+      "status": "api_ok",
+      "game_label": "马桶",
+      "category": "物品",
+      "pinyin": "ma_tong",
+      "homophones": [
+        "马上通",
+        "桶"
+      ],
+      "use_note": "可用于“马到成功、马上通”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 402,
+      "filename": "000402.jpg",
+      "label": "行人",
+      "status": "api_ok",
+      "game_label": "行人",
+      "category": "人物",
+      "pinyin": "ren",
+      "homophones": [
+        "人"
+      ],
+      "use_note": "可用于“与众不同”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 478,
+      "filename": "000478.jpg",
+      "label": "太阳",
+      "status": "api_ok",
+      "game_label": "太阳",
+      "category": "自然",
+      "pinyin": "tai_yang",
+      "homophones": [
+        "阳"
+      ],
+      "use_note": "可用于天气/阳光类题",
+      "source": "base_selected"
+    },
+    {
+      "index": 513,
+      "filename": "000513.jpg",
+      "label": "跑步",
+      "status": "api_ok",
+      "game_label": "跑步",
+      "category": "动作",
+      "pinyin": "pao",
+      "homophones": [
+        "跑"
+      ],
+      "use_note": "可用于运动题",
+      "source": "base_selected"
+    },
+    {
+      "index": 556,
+      "filename": "000556.jpg",
+      "label": "眼睛",
+      "status": "api_ok",
+      "game_label": "眼睛",
+      "category": "身体",
+      "pinyin": "yan",
+      "homophones": [
+        "眼",
+        "见"
+      ],
+      "use_note": "可用于“一见钟情”",
+      "source": "base_selected"
+    },
+    {
+      "index": 599,
+      "filename": "000599.jpg",
+      "label": "人物",
+      "status": "api_ok",
+      "game_label": "人物",
+      "category": "人物",
+      "pinyin": "ren",
+      "homophones": [
+        "人"
+      ],
+      "use_note": "可用于人物类题",
+      "source": "base_selected"
+    },
+    {
+      "index": 600,
+      "filename": "000600.jpg",
+      "label": "啤酒杯",
+      "status": "api_ok",
+      "game_label": "啤酒杯",
+      "category": "饮品",
+      "pinyin": "pi_jiu",
+      "homophones": [
+        "杯"
+      ],
+      "use_note": "可用于“有口皆碑”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 710,
+      "filename": "000710.jpg",
+      "label": "海浪",
+      "status": "api_ok",
+      "game_label": "海浪",
+      "category": "自然",
+      "pinyin": "lang",
+      "homophones": [
+        "浪"
+      ],
+      "use_note": "可用于“风生水起、如鱼得水”",
+      "source": "base_selected"
+    },
+    {
+      "index": 712,
+      "filename": "000712.jpg",
+      "label": "轮船",
+      "status": "api_ok",
+      "game_label": "轮船",
+      "category": "交通",
+      "pinyin": "chuan",
+      "homophones": [
+        "传",
+        "船"
+      ],
+      "use_note": "可用于“一帆风顺、传递好运”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 746,
+      "filename": "000746.jpg",
+      "label": "蚊子",
+      "status": "api_ok",
+      "game_label": "蚊子",
+      "category": "动物",
+      "pinyin": "wen",
+      "homophones": [
+        "文",
+        "闻"
+      ],
+      "use_note": "可用于“文思泉涌、闻名”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 780,
+      "filename": "000780.jpg",
+      "label": "睡觉",
+      "status": "api_ok",
+      "game_label": "睡觉",
+      "category": "动作",
+      "pinyin": "shui",
+      "homophones": [
+        "睡"
+      ],
+      "use_note": "可用于美梦题",
+      "source": "base_selected"
+    },
+    {
+      "index": 905,
+      "filename": "000905.jpg",
+      "label": "地球",
+      "status": "api_ok",
+      "game_label": "地球",
+      "category": "自然",
+      "pinyin": "di_qiu",
+      "homophones": [
+        "求"
+      ],
+      "use_note": "可用于全球类题",
+      "source": "base_selected"
+    },
+    {
+      "index": 923,
+      "filename": "000923.jpg",
+      "label": "树木",
+      "status": "api_ok",
+      "game_label": "树木",
+      "category": "自然",
+      "pinyin": "shu",
+      "homophones": [
+        "书"
+      ],
+      "use_note": "可用于“守株待兔”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 926,
+      "filename": "000926.jpg",
+      "label": "小鸟",
+      "status": "api_ok",
+      "game_label": "小鸟",
+      "category": "动物",
+      "pinyin": "niao",
+      "homophones": [
+        "鸟"
+      ],
+      "use_note": "可用于“鸟语花香”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 928,
+      "filename": "000928.jpg",
+      "label": "音符",
+      "status": "api_ok",
+      "game_label": "音符",
+      "category": "符号",
+      "pinyin": "yin_fu",
+      "homophones": [
+        "应付",
+        "音符"
+      ],
+      "use_note": "可用于“应付自如/音符”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 944,
+      "filename": "000944.jpg",
+      "label": "床铺",
+      "status": "api_ok",
+      "game_label": "床",
+      "category": "物品",
+      "pinyin": "chuang",
+      "homophones": [
+        "创",
+        "床"
+      ],
+      "use_note": "可用于“梦想起床、开创未来”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 948,
+      "filename": "000948.jpg",
+      "label": "闹钟",
+      "status": "api_ok",
+      "game_label": "闹钟",
+      "category": "时间",
+      "pinyin": "nao_zhong",
+      "homophones": [
+        "脑中",
+        "钟"
+      ],
+      "use_note": "可用于“脑中有数、一见钟情”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 988,
+      "filename": "000988.jpg",
+      "label": "嫩芽",
+      "status": "api_ok",
+      "game_label": "嫩芽",
+      "category": "自然",
+      "pinyin": "ya",
+      "homophones": [
+        "芽",
+        "呀"
+      ],
+      "use_note": "可用于“发芽/发财”等创意题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1024,
+      "filename": "001024.jpg",
+      "label": "窗户",
+      "status": "api_ok",
+      "game_label": "窗户",
+      "category": "建筑",
+      "pinyin": "chuang",
+      "homophones": [
+        "创",
+        "床"
+      ],
+      "use_note": "可用于“开窗/开创”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1026,
+      "filename": "001026.jpg",
+      "label": "难过",
+      "status": "api_ok",
+      "game_label": "难过",
+      "category": "情绪",
+      "pinyin": "nan_guo",
+      "homophones": [
+        "难"
+      ],
+      "use_note": "可用于难度较高的情绪题",
+      "source": "base_selected"
+    },
+    {
+      "index": 1033,
+      "filename": "001033.jpg",
+      "label": "黑猫",
+      "status": "api_ok",
+      "game_label": "黑猫",
+      "category": "动物",
+      "pinyin": "hei_mao",
+      "homophones": [
+        "猫",
+        "茂"
+      ],
+      "use_note": "可用于“黑猫警长、猫到成功”等猫类梗",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1042,
+      "filename": "001042.jpg",
+      "label": "哭脸",
+      "status": "api_ok",
+      "game_label": "哭脸",
+      "category": "情绪",
+      "pinyin": "ku",
+      "homophones": [
+        "哭"
+      ],
+      "use_note": "可用于情绪题",
+      "source": "base_selected"
+    },
+    {
+      "index": 1082,
+      "filename": "001082.jpg",
+      "label": "疑惑",
+      "status": "api_ok",
+      "game_label": "疑惑",
+      "category": "情绪",
+      "pinyin": "yi_huo",
+      "homophones": [
+        "一会儿",
+        "疑惑"
+      ],
+      "use_note": "可用于“疑惑不解”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1091,
+      "filename": "001091.jpg",
+      "label": "手机",
+      "status": "api_ok",
+      "game_label": "手机",
+      "category": "电子设备",
+      "pinyin": "shou_ji",
+      "homophones": [
+        "机"
+      ],
+      "use_note": "可用于现代梗",
+      "source": "base_selected"
+    },
+    {
+      "index": 1097,
+      "filename": "001097.jpg",
+      "label": "笑脸",
+      "status": "api_ok",
+      "game_label": "笑脸",
+      "category": "情绪",
+      "pinyin": "xiao",
+      "homophones": [
+        "笑"
+      ],
+      "use_note": "可用于“笑口常开”",
+      "source": "base_selected"
+    },
+    {
+      "index": 1127,
+      "filename": "001127.jpg",
+      "label": "灭火器",
+      "status": "api_ok",
+      "game_label": "灭火器",
+      "category": "物品",
+      "pinyin": "huo",
+      "homophones": [
+        "火",
+        "伙"
+      ],
+      "use_note": "可用于“火速、伙伴”类题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1131,
+      "filename": "001131.jpg",
+      "label": "吸管水杯",
+      "status": "api_ok",
+      "game_label": "水杯",
+      "category": "饮品",
+      "pinyin": "shui_bei",
+      "homophones": [
+        "杯",
+        "备"
+      ],
+      "use_note": "可用于“有备而来、杯水车薪”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1148,
+      "filename": "001148.jpg",
+      "label": "短袖T恤",
+      "status": "api_ok",
+      "game_label": "衣服",
+      "category": "物品",
+      "pinyin": "yi",
+      "homophones": [
+        "一",
+        "依"
+      ],
+      "use_note": "可用于“一路顺风、依依不舍”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1150,
+      "filename": "001150.jpg",
+      "label": "裤子",
+      "status": "api_ok",
+      "game_label": "裤子",
+      "category": "物品",
+      "pinyin": "ku",
+      "homophones": [
+        "酷",
+        "库"
+      ],
+      "use_note": "可用于“酷酷的、库里”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1156,
+      "filename": "001156.jpg",
+      "label": "袜子",
+      "status": "api_ok",
+      "game_label": "袜子",
+      "category": "物品",
+      "pinyin": "wa",
+      "homophones": [
+        "哇"
+      ],
+      "use_note": "可用于“哇塞”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1183,
+      "filename": "001183.jpg",
+      "label": "翻白眼",
+      "status": "api_ok",
+      "game_label": "翻白眼",
+      "category": "情绪",
+      "pinyin": "bai_yan",
+      "homophones": [
+        "白眼",
+        "百言"
+      ],
+      "use_note": "可用于“百言不如一见”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1200,
+      "filename": "001200.jpg",
+      "label": "呕吐",
+      "status": "api_ok",
+      "game_label": "吐",
+      "category": "动作",
+      "pinyin": "tu",
+      "homophones": [
+        "兔",
+        "途"
+      ],
+      "use_note": "可用于“吐/兔/途”类题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1212,
+      "filename": "001212.jpg",
+      "label": "OK手势",
+      "status": "api_ok",
+      "game_label": "OK手势",
+      "category": "动作",
+      "pinyin": "ok",
+      "homophones": [
+        "好",
+        "可"
+      ],
+      "use_note": "可用于“诸事顺利、事事OK”",
+      "source": "base_selected"
+    },
+    {
+      "index": 1231,
+      "filename": "001231.jpg",
+      "label": "汤锅",
+      "status": "api_ok",
+      "game_label": "锅",
+      "category": "食物",
+      "pinyin": "guo",
+      "homophones": [
+        "过",
+        "国"
+      ],
+      "use_note": "可用于“锅/过”类题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1233,
+      "filename": "001233.jpg",
+      "label": "热咖啡",
+      "status": "api_ok",
+      "game_label": "咖啡",
+      "category": "饮品",
+      "pinyin": "ka_fei",
+      "homophones": [
+        "咖"
+      ],
+      "use_note": "可用于“咖位很高”等现代梗",
+      "source": "base_selected"
+    },
+    {
+      "index": 1238,
+      "filename": "001238.jpg",
+      "label": "火焰",
+      "status": "api_ok",
+      "game_label": "火焰",
+      "category": "自然",
+      "pinyin": "huo",
+      "homophones": [
+        "伙"
+      ],
+      "use_note": "可用于造梗模式",
+      "source": "base_selected"
+    },
+    {
+      "index": 1240,
+      "filename": "001240.jpg",
+      "label": "炒菜",
+      "status": "api_ok",
+      "game_label": "炒菜",
+      "category": "动作",
+      "pinyin": "chao_cai",
+      "homophones": [
+        "超财",
+        "才"
+      ],
+      "use_note": "可用于“超有财”等现代梗",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1242,
+      "filename": "001242.jpg",
+      "label": "煎蛋",
+      "status": "api_ok",
+      "game_label": "煎蛋",
+      "category": "食物",
+      "pinyin": "jian_dan",
+      "homophones": [
+        "简单"
+      ],
+      "use_note": "可用于“简单快乐”创意题",
+      "source": "base_selected"
+    },
+    {
+      "index": 1247,
+      "filename": "001247.jpg",
+      "label": "吐司面包",
+      "status": "api_ok",
+      "game_label": "面包",
+      "category": "食物",
+      "pinyin": "mian_bao",
+      "homophones": [
+        "包",
+        "保"
+      ],
+      "use_note": "可用于“包你满意、保平安”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1254,
+      "filename": "001254.jpg",
+      "label": "指南针",
+      "status": "api_ok",
+      "game_label": "指南针",
+      "category": "物品",
+      "pinyin": "zhi_nan",
+      "homophones": [
+        "指南",
+        "直男"
+      ],
+      "use_note": "可用于“指南针/直男针”创意题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1270,
+      "filename": "001270.jpg",
+      "label": "收音机",
+      "status": "api_ok",
+      "game_label": "收音机",
+      "category": "电子设备",
+      "pinyin": "shou_yin",
+      "homophones": [
+        "收",
+        "音"
+      ],
+      "use_note": "可用于“收获声音、收音”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1276,
+      "filename": "001276.jpg",
+      "label": "下雨",
+      "status": "api_ok",
+      "game_label": "下雨",
+      "category": "自然",
+      "pinyin": "yu",
+      "homophones": [
+        "语"
+      ],
+      "use_note": "可用于“鸟语花香”",
+      "source": "base_selected"
+    },
+    {
+      "index": 1292,
+      "filename": "001292.jpg",
+      "label": "雨伞",
+      "status": "api_ok",
+      "game_label": "雨伞",
+      "category": "物品",
+      "pinyin": "san",
+      "homophones": [
+        "散"
+      ],
+      "use_note": "可用于“好聚好散”等创意题",
+      "source": "base_selected"
+    },
+    {
+      "index": 1299,
+      "filename": "001299.jpg",
+      "label": "垃圾桶",
+      "status": "api_ok",
+      "game_label": "垃圾桶",
+      "category": "物品",
+      "pinyin": "tong",
+      "homophones": [
+        "同",
+        "桶"
+      ],
+      "use_note": "可用于“同心协力/桶”类题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1303,
+      "filename": "001303.jpg",
+      "label": "倾听",
+      "status": "api_ok",
+      "game_label": "倾听",
+      "category": "动作",
+      "pinyin": "qing_ting",
+      "homophones": [
+        "蜻蜓",
+        "倾听"
+      ],
+      "use_note": "可用于“倾听/蜻蜓”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1328,
+      "filename": "001328.jpg",
+      "label": "招手",
+      "status": "api_ok",
+      "game_label": "招手",
+      "category": "动作",
+      "pinyin": "zhao_shou",
+      "homophones": [
+        "招",
+        "找"
+      ],
+      "use_note": "可用于“招财进宝、找手”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1331,
+      "filename": "001331.jpg",
+      "label": "自拍",
+      "status": "api_ok",
+      "game_label": "自拍",
+      "category": "动作",
+      "pinyin": "zi_pai",
+      "homophones": [
+        "自拍",
+        "自派"
+      ],
+      "use_note": "可用于“自成一派/自拍”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1336,
+      "filename": "001336.jpg",
+      "label": "书本",
+      "status": "api_ok",
+      "game_label": "书本",
+      "category": "物品",
+      "pinyin": "shu",
+      "homophones": [
+        "输",
+        "书"
+      ],
+      "use_note": "可用于“书香门第”",
+      "source": "base_selected"
+    },
+    {
+      "index": 1418,
+      "filename": "001418.jpg",
+      "label": "鞋子",
+      "status": "api_ok",
+      "game_label": "鞋子",
+      "category": "物品",
+      "pinyin": "xie",
+      "homophones": [
+        "谢",
+        "协"
+      ],
+      "use_note": "可用于“谢谢/鞋鞋”网络梗",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1419,
+      "filename": "001419.jpg",
+      "label": "红酒瓶",
+      "status": "api_ok",
+      "game_label": "酒瓶",
+      "category": "饮品",
+      "pinyin": "jiu",
+      "homophones": [
+        "久",
+        "旧"
+      ],
+      "use_note": "可用于“长长久久、旧事重提”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1421,
+      "filename": "001421.jpg",
+      "label": "咖啡杯",
+      "status": "api_ok",
+      "game_label": "咖啡杯",
+      "category": "饮品",
+      "pinyin": "ka_fei",
+      "homophones": [
+        "咖",
+        "飞"
+      ],
+      "use_note": "可用于“咖位、起飞”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1430,
+      "filename": "001430.jpg",
+      "label": "牛奶盒",
+      "status": "api_ok",
+      "game_label": "牛奶",
+      "category": "饮品",
+      "pinyin": "niu_nai",
+      "homophones": [
+        "牛",
+        "耐"
+      ],
+      "use_note": "可用于“牛奶/牛耐”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1445,
+      "filename": "001445.jpg",
+      "label": "小船",
+      "status": "api_ok",
+      "game_label": "小船",
+      "category": "交通",
+      "pinyin": "chuan",
+      "homophones": [
+        "船"
+      ],
+      "use_note": "可用于“一帆风顺”",
+      "source": "base_selected"
+    },
+    {
+      "index": 1447,
+      "filename": "001447.jpg",
+      "label": "玉米",
+      "status": "api_ok",
+      "game_label": "玉米",
+      "category": "食物",
+      "pinyin": "yu_mi",
+      "homophones": [
+        "遇",
+        "米"
+      ],
+      "use_note": "可用于“与你相遇、米开朗基罗”等创意题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1466,
+      "filename": "001466.jpg",
+      "label": "纸船",
+      "status": "api_ok",
+      "game_label": "纸船",
+      "category": "交通",
+      "pinyin": "chuan",
+      "homophones": [
+        "传",
+        "船"
+      ],
+      "use_note": "可用于“纸/只、船/传”组合题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1476,
+      "filename": "001476.jpg",
+      "label": "雷雨",
+      "status": "api_ok",
+      "game_label": "雷雨",
+      "category": "自然",
+      "pinyin": "lei_yu",
+      "homophones": [
+        "累",
+        "语"
+      ],
+      "use_note": "可用于“累觉不爱、雷厉风行”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1539,
+      "filename": "001539.jpg",
+      "label": "牙齿",
+      "status": "api_ok",
+      "game_label": "牙齿",
+      "category": "身体",
+      "pinyin": "ya",
+      "homophones": [
+        "呀",
+        "牙"
+      ],
+      "use_note": "可用于“笑掉大牙”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1598,
+      "filename": "001598.jpg",
+      "label": "猫",
+      "status": "api_ok",
+      "game_label": "猫",
+      "category": "动物",
+      "pinyin": "mao",
+      "homophones": [
+        "茂"
+      ],
+      "use_note": "可用于“招财猫”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 1612,
+      "filename": "001612.jpg",
+      "label": "身份证",
+      "status": "api_ok",
+      "game_label": "身份证",
+      "category": "物品",
+      "pinyin": "shen_fen",
+      "homophones": [
+        "身份",
+        "十分"
+      ],
+      "use_note": "可用于“十分靠谱/身份”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1614,
+      "filename": "001614.jpg",
+      "label": "公文包",
+      "status": "api_ok",
+      "game_label": "公文包",
+      "category": "物品",
+      "pinyin": "bao",
+      "homophones": [
+        "包",
+        "保"
+      ],
+      "use_note": "可用于“包你满意、保佑”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1636,
+      "filename": "001636.jpg",
+      "label": "钥匙",
+      "status": "api_ok",
+      "game_label": "钥匙",
+      "category": "物品",
+      "pinyin": "yao_shi",
+      "homophones": [
+        "要是"
+      ],
+      "use_note": "可用于“钥/要是”创意题",
+      "source": "base_selected"
+    },
+    {
+      "index": 1659,
+      "filename": "001659.jpg",
+      "label": "锁",
+      "status": "api_ok",
+      "game_label": "锁",
+      "category": "物品",
+      "pinyin": "suo",
+      "homophones": [
+        "所"
+      ],
+      "use_note": "可用于安全类题",
+      "source": "base_selected"
+    },
+    {
+      "index": 1683,
+      "filename": "001683.jpg",
+      "label": "公交车",
+      "status": "api_ok",
+      "game_label": "公交车",
+      "category": "交通",
+      "pinyin": "che",
+      "homophones": [
+        "车"
+      ],
+      "use_note": "可用于交通类组合题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1687,
+      "filename": "001687.jpg",
+      "label": "火车",
+      "status": "api_ok",
+      "game_label": "火车",
+      "category": "交通",
+      "pinyin": "huo_che",
+      "homophones": [
+        "车"
+      ],
+      "use_note": "可用于交通题",
+      "source": "base_selected"
+    },
+    {
+      "index": 1735,
+      "filename": "001735.jpg",
+      "label": "喇叭",
+      "status": "api_ok",
+      "game_label": "喇叭",
+      "category": "物品",
+      "pinyin": "la_ba",
+      "homophones": [
+        "拉吧"
+      ],
+      "use_note": "可用于“拉吧/喇叭”创意题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1780,
+      "filename": "001780.jpg",
+      "label": "打字",
+      "status": "api_ok",
+      "game_label": "打字",
+      "category": "动作",
+      "pinyin": "da_zi",
+      "homophones": [
+        "答字",
+        "打字"
+      ],
+      "use_note": "可用于“答字/打字”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1803,
+      "filename": "001803.jpg",
+      "label": "地铁站台",
+      "status": "api_ok",
+      "game_label": "站台",
+      "category": "建筑",
+      "pinyin": "zhan_tai",
+      "homophones": [
+        "站",
+        "台"
+      ],
+      "use_note": "可用于“站台/战台”趣味题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1808,
+      "filename": "001808.jpg",
+      "label": "门",
+      "status": "api_ok",
+      "game_label": "门",
+      "category": "建筑",
+      "pinyin": "men",
+      "homophones": [
+        "门"
+      ],
+      "use_note": "可用于“笑口常开、书香门第”",
+      "source": "base_selected"
+    },
+    {
+      "index": 1818,
+      "filename": "001818.jpg",
+      "label": "地铁",
+      "status": "api_ok",
+      "game_label": "地铁",
+      "category": "交通",
+      "pinyin": "tie",
+      "homophones": [
+        "贴",
+        "铁"
+      ],
+      "use_note": "可用于“贴心、铁了心”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1886,
+      "filename": "001886.jpg",
+      "label": "椅子",
+      "status": "api_ok",
+      "game_label": "椅子",
+      "category": "物品",
+      "pinyin": "yi",
+      "homophones": [
+        "一",
+        "依"
+      ],
+      "use_note": "可用于“一心一意、依靠”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1902,
+      "filename": "001902.jpg",
+      "label": "鞠躬",
+      "status": "api_ok",
+      "game_label": "鞠躬",
+      "category": "动作",
+      "pinyin": "ju_gong",
+      "homophones": [
+        "居功",
+        "鞠躬"
+      ],
+      "use_note": "可用于“居功不傲/鞠躬”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 1960,
+      "filename": "001960.jpg",
+      "label": "惊喜",
+      "status": "api_ok",
+      "game_label": "惊喜",
+      "category": "情绪",
+      "pinyin": "jing_xi",
+      "homophones": [
+        "惊喜",
+        "鲸喜"
+      ],
+      "use_note": "可用于“鲸喜/惊喜”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2023,
+      "filename": "002023.jpg",
+      "label": "电梯",
+      "status": "api_ok",
+      "game_label": "电梯",
+      "category": "建筑",
+      "pinyin": "ti",
+      "homophones": [
+        "提",
+        "梯"
+      ],
+      "use_note": "可用于“步步高升/梯升”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2063,
+      "filename": "002063.jpg",
+      "label": "愤怒",
+      "status": "api_ok",
+      "game_label": "生气",
+      "category": "情绪",
+      "pinyin": "sheng_qi",
+      "homophones": [
+        "生气",
+        "升起"
+      ],
+      "use_note": "可用于“升起/生气”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2268,
+      "filename": "002268.jpg",
+      "label": "银行卡",
+      "status": "api_ok",
+      "game_label": "银行卡",
+      "category": "物品",
+      "pinyin": "yin_hang",
+      "homophones": [
+        "银",
+        "赢"
+      ],
+      "use_note": "可用于“赢麻了/银”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2280,
+      "filename": "002280.jpg",
+      "label": "手掌",
+      "status": "api_ok",
+      "game_label": "手掌",
+      "category": "身体",
+      "pinyin": "shou",
+      "homophones": [
+        "手"
+      ],
+      "use_note": "可用于互动题",
+      "source": "base_selected"
+    },
+    {
+      "index": 2311,
+      "filename": "002311.jpg",
+      "label": "笔记本电脑",
+      "status": "api_ok",
+      "game_label": "笔记本电脑",
+      "category": "电子设备",
+      "pinyin": "bi_ji_ben",
+      "homophones": [
+        "必"
+      ],
+      "use_note": "可用于学习类题",
+      "source": "base_selected"
+    },
+    {
+      "index": 2313,
+      "filename": "002313.jpg",
+      "label": "沙漏",
+      "status": "api_ok",
+      "game_label": "沙漏",
+      "category": "时间",
+      "pinyin": "sha_lou",
+      "homophones": [
+        "漏",
+        "楼"
+      ],
+      "use_note": "可用于“漏网之鱼、楼上见”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2329,
+      "filename": "002329.jpg",
+      "label": "无线网络",
+      "status": "api_ok",
+      "game_label": "无线网络",
+      "category": "电子设备",
+      "pinyin": "wang",
+      "homophones": [
+        "网",
+        "往"
+      ],
+      "use_note": "可用于“网开一面、往事随风”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2331,
+      "filename": "002331.jpg",
+      "label": "蓝牙",
+      "status": "api_ok",
+      "game_label": "蓝牙",
+      "category": "电子设备",
+      "pinyin": "lan_ya",
+      "homophones": [
+        "烂呀",
+        "蓝牙"
+      ],
+      "use_note": "可用于“蓝牙/烂呀”口语梗",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2344,
+      "filename": "002344.jpg",
+      "label": "QQ企鹅",
+      "status": "api_ok",
+      "game_label": "企鹅",
+      "category": "动物",
+      "pinyin": "qi_e",
+      "homophones": [
+        "企鹅",
+        "企饿"
+      ],
+      "use_note": "可用于“企鹅/企饿”等创意题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2620,
+      "filename": "002620.jpg",
+      "label": "大笑",
+      "status": "api_ok",
+      "game_label": "大笑",
+      "category": "情绪",
+      "pinyin": "xiao",
+      "homophones": [
+        "笑",
+        "效"
+      ],
+      "use_note": "可用于“笑口常开”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2659,
+      "filename": "002659.jpg",
+      "label": "外星人",
+      "status": "api_ok",
+      "game_label": "外星人",
+      "category": "人物",
+      "pinyin": "xing",
+      "homophones": [
+        "星",
+        "行"
+      ],
+      "use_note": "可用于“星/行”类题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2676,
+      "filename": "002676.jpg",
+      "label": "花朵",
+      "status": "api_ok",
+      "game_label": "花朵",
+      "category": "自然",
+      "pinyin": "hua",
+      "homophones": [
+        "话"
+      ],
+      "use_note": "可用于“鸟语花香、花好月圆”",
+      "source": "base_selected"
+    },
+    {
+      "index": 2703,
+      "filename": "002703.jpg",
+      "label": "心碎",
+      "status": "api_ok",
+      "game_label": "心碎",
+      "category": "情绪",
+      "pinyin": "xin_sui",
+      "homophones": [
+        "心随",
+        "心碎"
+      ],
+      "use_note": "可用于“心随你动”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2710,
+      "filename": "002710.jpg",
+      "label": "哭泣",
+      "status": "api_ok",
+      "game_label": "哭泣",
+      "category": "情绪",
+      "pinyin": "ku",
+      "homophones": [
+        "苦",
+        "哭"
+      ],
+      "use_note": "可用于“苦尽甘来/哭”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2723,
+      "filename": "002723.jpg",
+      "label": "脚印",
+      "status": "api_ok",
+      "game_label": "脚印",
+      "category": "身体",
+      "pinyin": "jiao",
+      "homophones": [
+        "交"
+      ],
+      "use_note": "可用于行走题",
+      "source": "base_selected"
+    },
+    {
+      "index": 2730,
+      "filename": "002730.jpg",
+      "label": "嘴唇",
+      "status": "api_ok",
+      "game_label": "嘴",
+      "category": "身体",
+      "pinyin": "zui",
+      "homophones": [
+        "最",
+        "嘴"
+      ],
+      "use_note": "可用于“最美/嘴美”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2758,
+      "filename": "002758.jpg",
+      "label": "马克杯",
+      "status": "api_ok",
+      "game_label": "马克杯",
+      "category": "饮品",
+      "pinyin": "ma_ke",
+      "homophones": [
+        "马",
+        "可"
+      ],
+      "use_note": "可用于“马上可以”等创意题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 2855,
+      "filename": "002855.jpg",
+      "label": "钻石",
+      "status": "api_ok",
+      "game_label": "钻石",
+      "category": "物品",
+      "pinyin": "zuan_shi",
+      "homophones": [
+        "时",
+        "石"
+      ],
+      "use_note": "可用于“时来运转”",
+      "source": "base_selected"
+    },
+    {
+      "index": 3027,
+      "filename": "003027.jpg",
+      "label": "狗",
+      "status": "api_ok",
+      "game_label": "狗",
+      "category": "动物",
+      "pinyin": "gou",
+      "homophones": [
+        "够",
+        "苟"
+      ],
+      "use_note": "可用于“苟富贵”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 3130,
+      "filename": "003130.jpg",
+      "label": "雪山",
+      "status": "api_ok",
+      "game_label": "雪山",
+      "category": "自然",
+      "pinyin": "xue_shan",
+      "homophones": [
+        "学",
+        "山"
+      ],
+      "use_note": "可用于“学山有路”等学习梗",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3154,
+      "filename": "003154.jpg",
+      "label": "山峰",
+      "status": "api_ok",
+      "game_label": "山峰",
+      "category": "自然",
+      "pinyin": "shan",
+      "homophones": [
+        "山"
+      ],
+      "use_note": "可用于“鸭梨山大、登峰造极”",
+      "source": "base_selected"
+    },
+    {
+      "index": 3172,
+      "filename": "003172.jpg",
+      "label": "鱼",
+      "status": "api_ok",
+      "game_label": "鱼",
+      "category": "动物",
+      "pinyin": "yu",
+      "homophones": [
+        "余",
+        "愉",
+        "与"
+      ],
+      "use_note": "可用于“年年有余、好运有余、鱼你同行”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 3201,
+      "filename": "003201.jpg",
+      "label": "水滴",
+      "status": "api_ok",
+      "game_label": "水滴",
+      "category": "自然",
+      "pinyin": "shui",
+      "homophones": [
+        "谁",
+        "睡"
+      ],
+      "use_note": "可用于“谁与争锋、睡觉”组合题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3291,
+      "filename": "003291.jpg",
+      "label": "火山",
+      "status": "api_ok",
+      "game_label": "火山",
+      "category": "自然",
+      "pinyin": "huo_shan",
+      "homophones": [
+        "火",
+        "山"
+      ],
+      "use_note": "可用于“火山/火上加油”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3304,
+      "filename": "003304.jpg",
+      "label": "四叶草",
+      "status": "api_ok",
+      "game_label": "草",
+      "category": "自然",
+      "pinyin": "cao",
+      "homophones": [
+        "操",
+        "草"
+      ],
+      "use_note": "可用于“草率、草木皆兵”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3356,
+      "filename": "003356.jpg",
+      "label": "握手",
+      "status": "api_ok",
+      "game_label": "握手",
+      "category": "动作",
+      "pinyin": "wo_shou",
+      "homophones": [
+        "握手",
+        "我手"
+      ],
+      "use_note": "可用于“握手言和”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3371,
+      "filename": "003371.jpg",
+      "label": "鸡尾酒杯",
+      "status": "api_ok",
+      "game_label": "鸡尾酒杯",
+      "category": "饮品",
+      "pinyin": "ji",
+      "homophones": [
+        "机",
+        "吉"
+      ],
+      "use_note": "可用于“吉祥、机会”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3381,
+      "filename": "003381.jpg",
+      "label": "井号",
+      "status": "api_ok",
+      "game_label": "井号",
+      "category": "符号",
+      "pinyin": "jing",
+      "homophones": [
+        "惊"
+      ],
+      "use_note": "可用于“惊喜”类题",
+      "source": "base_selected"
+    },
+    {
+      "index": 3387,
+      "filename": "003387.jpg",
+      "label": "钱袋",
+      "status": "api_ok",
+      "game_label": "钱袋",
+      "category": "物品",
+      "pinyin": "qian",
+      "homophones": [
+        "前"
+      ],
+      "use_note": "可用于“前兔似锦、财源滚滚”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 3390,
+      "filename": "003390.jpg",
+      "label": "公牛",
+      "status": "api_ok",
+      "game_label": "公牛",
+      "category": "动物",
+      "pinyin": "niu",
+      "homophones": [
+        "牛",
+        "扭"
+      ],
+      "use_note": "可用于“牛气冲天、扭转乾坤”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3392,
+      "filename": "003392.jpg",
+      "label": "熊",
+      "status": "api_ok",
+      "game_label": "熊",
+      "category": "动物",
+      "pinyin": "xiong",
+      "homophones": [
+        "雄"
+      ],
+      "use_note": "可用于“英雄/英熊”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3398,
+      "filename": "003398.jpg",
+      "label": "加油机",
+      "status": "api_ok",
+      "game_label": "加油机",
+      "category": "物品",
+      "pinyin": "jia_you",
+      "homophones": [
+        "加油",
+        "有"
+      ],
+      "use_note": "可用于“加油发财”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 3421,
+      "filename": "003421.jpg",
+      "label": "电影票",
+      "status": "api_ok",
+      "game_label": "电影票",
+      "category": "物品",
+      "pinyin": "piao",
+      "homophones": [
+        "漂",
+        "票"
+      ],
+      "use_note": "可用于“漂亮/票亮”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3491,
+      "filename": "003491.jpg",
+      "label": "举手",
+      "status": "api_ok",
+      "game_label": "举手",
+      "category": "动作",
+      "pinyin": "ju_shou",
+      "homophones": [
+        "举手",
+        "聚首"
+      ],
+      "use_note": "可用于“举手/聚首”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3535,
+      "filename": "003535.jpg",
+      "label": "牛角包",
+      "status": "api_ok",
+      "game_label": "牛角包",
+      "category": "食物",
+      "pinyin": "niu_jiao_bao",
+      "homophones": [
+        "牛",
+        "包"
+      ],
+      "use_note": "可用于“牛气、包你满意”等组合题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3546,
+      "filename": "003546.jpg",
+      "label": "带茶包茶杯",
+      "status": "api_ok",
+      "game_label": "茶",
+      "category": "饮品",
+      "pinyin": "cha",
+      "homophones": [
+        "查",
+        "差"
+      ],
+      "use_note": "可用于“查无此人、差不多”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3574,
+      "filename": "003574.jpg",
+      "label": "灯泡",
+      "status": "api_ok",
+      "game_label": "灯泡",
+      "category": "物品",
+      "pinyin": "deng",
+      "homophones": [
+        "登"
+      ],
+      "use_note": "可用于“登峰造极”",
+      "source": "base_selected"
+    },
+    {
+      "index": 3576,
+      "filename": "003576.jpg",
+      "label": "帽子",
+      "status": "api_ok",
+      "game_label": "帽子",
+      "category": "物品",
+      "pinyin": "mao",
+      "homophones": [
+        "茂",
+        "冒"
+      ],
+      "use_note": "可用于“帽/冒”类题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3607,
+      "filename": "003607.jpg",
+      "label": "放大镜",
+      "status": "api_ok",
+      "game_label": "放大镜",
+      "category": "物品",
+      "pinyin": "fang_da_jing",
+      "homophones": [
+        "见"
+      ],
+      "use_note": "可用于观察类题",
+      "source": "base_selected"
+    },
+    {
+      "index": 3642,
+      "filename": "003642.jpg",
+      "label": "茶杯",
+      "status": "api_ok",
+      "game_label": "茶杯",
+      "category": "饮品",
+      "pinyin": "cha",
+      "homophones": [
+        "茶"
+      ],
+      "use_note": "可用于饮品题",
+      "source": "base_selected"
+    },
+    {
+      "index": 3658,
+      "filename": "003658.jpg",
+      "label": "松树",
+      "status": "api_ok",
+      "game_label": "树",
+      "category": "自然",
+      "pinyin": "shu",
+      "homophones": [
+        "书",
+        "输"
+      ],
+      "use_note": "可用于“书香门第、不输”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3817,
+      "filename": "003817.jpg",
+      "label": "显微镜",
+      "status": "api_ok",
+      "game_label": "显微镜",
+      "category": "物品",
+      "pinyin": "jing",
+      "homophones": [
+        "惊",
+        "镜"
+      ],
+      "use_note": "可用于“惊喜/镜喜”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3879,
+      "filename": "003879.jpg",
+      "label": "生日蛋糕",
+      "status": "api_ok",
+      "game_label": "蛋糕",
+      "category": "食物",
+      "pinyin": "dan_gao",
+      "homophones": [
+        "高",
+        "糕"
+      ],
+      "use_note": "可用于“步步高升/糕升”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 3939,
+      "filename": "003939.jpg",
+      "label": "大脑",
+      "status": "api_ok",
+      "game_label": "大脑",
+      "category": "身体",
+      "pinyin": "nao",
+      "homophones": [
+        "闹",
+        "脑"
+      ],
+      "use_note": "可用于“脑洞大开”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 4043,
+      "filename": "004043.jpg",
+      "label": "蝎子",
+      "status": "api_ok",
+      "game_label": "蝎子",
+      "category": "动物",
+      "pinyin": "xie",
+      "homophones": [
+        "谢",
+        "写"
+      ],
+      "use_note": "可用于“谢谢/写作”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 4139,
+      "filename": "004139.jpg",
+      "label": "线鼻子",
+      "status": "api_ok",
+      "game_label": "鼻子",
+      "category": "身体",
+      "pinyin": "bi",
+      "homophones": [
+        "必",
+        "鼻"
+      ],
+      "use_note": "可用于“必须/鼻须”类题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 4365,
+      "filename": "004365.jpg",
+      "label": "自行车",
+      "status": "api_ok",
+      "game_label": "自行车",
+      "category": "交通",
+      "pinyin": "che",
+      "homophones": [
+        "车"
+      ],
+      "use_note": "可用于“骑乐无穷”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 4368,
+      "filename": "004368.jpg",
+      "label": "相机",
+      "status": "api_ok",
+      "game_label": "相机",
+      "category": "物品",
+      "pinyin": "xiang_ji",
+      "homophones": [
+        "想",
+        "机"
+      ],
+      "use_note": "可用于“想机/相机、机会”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 4822,
+      "filename": "004822.jpg",
+      "label": "电话",
+      "status": "api_ok",
+      "game_label": "电话",
+      "category": "电子设备",
+      "pinyin": "dian_hua",
+      "homophones": [
+        "话"
+      ],
+      "use_note": "可用于“花言巧语/电话梗”",
+      "source": "base_selected"
+    },
+    {
+      "index": 5090,
+      "filename": "005090.jpg",
+      "label": "公鸡",
+      "status": "api_ok",
+      "game_label": "鸡",
+      "category": "动物",
+      "pinyin": "ji",
+      "homophones": [
+        "机",
+        "吉",
+        "稽"
+      ],
+      "use_note": "可用于“机不可失、无稽之谈、大吉大利”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 5096,
+      "filename": "005096.jpg",
+      "label": "贝壳",
+      "status": "api_ok",
+      "game_label": "贝壳",
+      "category": "自然物",
+      "pinyin": "bei",
+      "homophones": [
+        "备"
+      ],
+      "use_note": "可用于“有备而来”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 5163,
+      "filename": "005163.jpg",
+      "label": "熊猫",
+      "status": "api_ok",
+      "game_label": "熊猫",
+      "category": "动物",
+      "pinyin": "xiong_mao",
+      "homophones": [
+        "猫",
+        "貌"
+      ],
+      "use_note": "可用于“猫到成功、貌似很强”等扩展题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 5193,
+      "filename": "005193.jpg",
+      "label": "龙虾",
+      "status": "api_ok",
+      "game_label": "龙虾",
+      "category": "动物",
+      "pinyin": "long_xia",
+      "homophones": [
+        "隆",
+        "下"
+      ],
+      "use_note": "可用于“龙虾/隆下”等造梗题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 5194,
+      "filename": "005194.jpg",
+      "label": "章鱼",
+      "status": "api_ok",
+      "game_label": "章鱼",
+      "category": "动物",
+      "pinyin": "zhang_yu",
+      "homophones": [
+        "章",
+        "余"
+      ],
+      "use_note": "可用于“掌/章、余”组合题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 5200,
+      "filename": "005200.jpg",
+      "label": "牛",
+      "status": "api_ok",
+      "game_label": "牛",
+      "category": "动物",
+      "pinyin": "niu",
+      "homophones": [
+        "扭"
+      ],
+      "use_note": "可用于“牛气冲天、吹牛”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 5302,
+      "filename": "005302.jpg",
+      "label": "汉堡包",
+      "status": "api_ok",
+      "game_label": "汉堡",
+      "category": "食物",
+      "pinyin": "han_bao",
+      "homophones": [
+        "饱",
+        "堡"
+      ],
+      "use_note": "可用于“汉堡/很饱”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 5454,
+      "filename": "005454.jpg",
+      "label": "火锅",
+      "status": "api_ok",
+      "game_label": "火锅",
+      "category": "食物",
+      "pinyin": "huo_guo",
+      "homophones": [
+        "火",
+        "伙",
+        "过"
+      ],
+      "use_note": "可用于“红红火火、过年”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 5474,
+      "filename": "005474.jpg",
+      "label": "螃蟹",
+      "status": "api_ok",
+      "game_label": "螃蟹",
+      "category": "动物",
+      "pinyin": "xie",
+      "homophones": [
+        "谢"
+      ],
+      "use_note": "可用于“谢谢/蟹蟹”网络梗",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 5498,
+      "filename": "005498.jpg",
+      "label": "黑绵羊",
+      "status": "api_ok",
+      "game_label": "羊",
+      "category": "动物",
+      "pinyin": "yang",
+      "homophones": [
+        "样",
+        "阳"
+      ],
+      "use_note": "可用于“喜气洋洋/喜气羊羊”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 5499,
+      "filename": "005499.jpg",
+      "label": "猪",
+      "status": "api_ok",
+      "game_label": "猪",
+      "category": "动物",
+      "pinyin": "zhu",
+      "homophones": [
+        "祝",
+        "诸"
+      ],
+      "use_note": "可用于“祝你发财、诸事顺利”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 5503,
+      "filename": "005503.jpg",
+      "label": "蜗牛",
+      "status": "api_ok",
+      "game_label": "蜗牛",
+      "category": "动物",
+      "pinyin": "niu",
+      "homophones": [
+        "牛",
+        "扭"
+      ],
+      "use_note": "可用于“慢慢牛/扭”类题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 5504,
+      "filename": "005504.jpg",
+      "label": "兔子",
+      "status": "api_ok",
+      "game_label": "兔子",
+      "category": "动物",
+      "pinyin": "tu",
+      "homophones": [
+        "途",
+        "突"
+      ],
+      "use_note": "可用于“前兔似锦、兔然暴富”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 5505,
+      "filename": "005505.jpg",
+      "label": "蛇",
+      "status": "api_ok",
+      "game_label": "蛇",
+      "category": "动物",
+      "pinyin": "she",
+      "homophones": [
+        "舍",
+        "舌"
+      ],
+      "use_note": "可用于“舍我其谁”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 6018,
+      "filename": "006018.jpg",
+      "label": "鸭子",
+      "status": "api_ok",
+      "game_label": "鸭子",
+      "category": "动物",
+      "pinyin": "ya",
+      "homophones": [
+        "压"
+      ],
+      "use_note": "可用于“鸭梨山大”等题",
+      "source": "base_selected"
+    },
+    {
+      "index": 6025,
+      "filename": "006025.jpg",
+      "label": "五角星",
+      "status": "api_ok",
+      "game_label": "五角星",
+      "category": "图形",
+      "pinyin": "xing",
+      "homophones": [
+        "心"
+      ],
+      "use_note": "可用于“心心相印”",
+      "source": "base_selected"
+    },
+    {
+      "index": 6157,
+      "filename": "006157.jpg",
+      "label": "胡萝卜",
+      "status": "api_ok",
+      "game_label": "胡萝卜",
+      "category": "食物",
+      "pinyin": "luo_bo",
+      "homophones": [
+        "萝",
+        "卜"
+      ],
+      "use_note": "可用于造梗模式",
+      "source": "base_selected"
+    },
+    {
+      "index": 6171,
+      "filename": "006171.jpg",
+      "label": "行李箱",
+      "status": "api_ok",
+      "game_label": "行李箱",
+      "category": "物品",
+      "pinyin": "xing_li",
+      "homophones": [
+        "行",
+        "礼"
+      ],
+      "use_note": "可用于“行礼/行李”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 6188,
+      "filename": "006188.jpg",
+      "label": "笔记本",
+      "status": "api_ok",
+      "game_label": "笔",
+      "category": "物品",
+      "pinyin": "bi",
+      "homophones": [
+        "必",
+        "笔"
+      ],
+      "use_note": "可用于“必胜、笔下生花”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 6265,
+      "filename": "006265.jpg",
+      "label": "金钱",
+      "status": "api_ok",
+      "game_label": "金钱",
+      "category": "物品",
+      "pinyin": "jin_qian",
+      "homophones": [
+        "今",
+        "钱"
+      ],
+      "use_note": "可用于财运类题",
+      "source": "base_selected"
+    },
+    {
+      "index": 6567,
+      "filename": "006567.jpg",
+      "label": "存钱罐",
+      "status": "api_ok",
+      "game_label": "存钱罐",
+      "category": "物品",
+      "pinyin": "qian",
+      "homophones": [
+        "前",
+        "钱"
+      ],
+      "use_note": "可用于“存钱/从前”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 6615,
+      "filename": "006615.jpg",
+      "label": "水波",
+      "status": "api_ok",
+      "game_label": "水波",
+      "category": "自然",
+      "pinyin": "bo",
+      "homophones": [
+        "播",
+        "波"
+      ],
+      "use_note": "可用于“波澜不惊、直播”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 6664,
+      "filename": "006664.jpg",
+      "label": "鸡蛋",
+      "status": "api_ok",
+      "game_label": "鸡蛋",
+      "category": "食物",
+      "pinyin": "ji_dan",
+      "homophones": [
+        "吉",
+        "简单"
+      ],
+      "use_note": "可用于“大吉大利、简单快乐”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 6786,
+      "filename": "006786.jpg",
+      "label": "菜刀",
+      "status": "api_ok",
+      "game_label": "菜刀",
+      "category": "物品",
+      "pinyin": "cai_dao",
+      "homophones": [
+        "才到",
+        "财到"
+      ],
+      "use_note": "可用于“财到/才到”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 6997,
+      "filename": "006997.jpg",
+      "label": "心跳",
+      "status": "api_ok",
+      "game_label": "心跳",
+      "category": "情绪",
+      "pinyin": "xin_tiao",
+      "homophones": [
+        "心跳",
+        "新调"
+      ],
+      "use_note": "可用于“心动、心跳”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 7117,
+      "filename": "007117.jpg",
+      "label": "风扇",
+      "status": "api_ok",
+      "game_label": "风扇",
+      "category": "物品",
+      "pinyin": "feng",
+      "homophones": [
+        "风"
+      ],
+      "use_note": "可用于“一帆风顺、风生水起”",
+      "source": "base_selected"
+    },
+    {
+      "index": 7203,
+      "filename": "007203.jpg",
+      "label": "双手合十",
+      "status": "api_ok",
+      "game_label": "合十",
+      "category": "动作",
+      "pinyin": "he_shi",
+      "homophones": [
+        "合适",
+        "合十"
+      ],
+      "use_note": "可用于“合适/合十”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 7793,
+      "filename": "007793.jpg",
+      "label": "出租车",
+      "status": "api_ok",
+      "game_label": "出租车",
+      "category": "交通",
+      "pinyin": "che",
+      "homophones": [
+        "车"
+      ],
+      "use_note": "可用于“车水马龙”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 7820,
+      "filename": "007820.jpg",
+      "label": "雪花",
+      "status": "api_ok",
+      "game_label": "雪花",
+      "category": "自然",
+      "pinyin": "xue_hua",
+      "homophones": [
+        "学",
+        "话"
+      ],
+      "use_note": "可用于“学有所成、话里有话”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 8018,
+      "filename": "008022.jpg",
+      "label": "鳄鱼",
+      "status": "api_ok",
+      "game_label": "鳄鱼",
+      "category": "动物",
+      "pinyin": "e_yu",
+      "homophones": [
+        "厄",
+        "余"
+      ],
+      "use_note": "可用于“鳄/饿、鱼/余”组合梗",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 8030,
+      "filename": "008036.jpg",
+      "label": "蝴蝶",
+      "status": "api_ok",
+      "game_label": "蝴蝶",
+      "category": "动物",
+      "pinyin": "die",
+      "homophones": [
+        "叠",
+        "跌"
+      ],
+      "use_note": "可用于“蝶/叠”类题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 8702,
+      "filename": "008810.jpg",
+      "label": "风景",
+      "status": "api_ok",
+      "game_label": "风景",
+      "category": "自然",
+      "pinyin": "feng_jing",
+      "homophones": [
+        "风",
+        "景",
+        "惊"
+      ],
+      "use_note": "可用于“风景/逢景/惊喜”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 8901,
+      "filename": "009047.jpg",
+      "label": "小狗",
+      "status": "api_ok",
+      "game_label": "小狗",
+      "category": "动物",
+      "pinyin": "gou",
+      "homophones": [
+        "够",
+        "苟"
+      ],
+      "use_note": "可用于“狗/够”类谐音",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 9547,
+      "filename": "009809.jpg",
+      "label": "公交车站",
+      "status": "api_ok",
+      "game_label": "公交站",
+      "category": "建筑",
+      "pinyin": "zhan",
+      "homophones": [
+        "站",
+        "战"
+      ],
+      "use_note": "可用于“站起来、战无不胜”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 9959,
+      "filename": "010291.jpg",
+      "label": "说话",
+      "status": "api_ok",
+      "game_label": "说话",
+      "category": "动作",
+      "pinyin": "shuo_hua",
+      "homophones": [
+        "说话",
+        "硕花"
+      ],
+      "use_note": "可用于“花言巧语/话”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 10417,
+      "filename": "010832.jpg",
+      "label": "电视机",
+      "status": "api_ok",
+      "game_label": "电视机",
+      "category": "电子设备",
+      "pinyin": "dian_shi",
+      "homophones": [
+        "电视",
+        "点事"
+      ],
+      "use_note": "可用于“有点事/电视”题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 10498,
+      "filename": "010929.jpg",
+      "label": "大象",
+      "status": "api_ok",
+      "game_label": "大象",
+      "category": "动物",
+      "pinyin": "xiang",
+      "homophones": [
+        "想",
+        "象"
+      ],
+      "use_note": "可用于“想你、大象无形”等题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 10579,
+      "filename": "011028.jpg",
+      "label": "耳朵",
+      "status": "api_ok",
+      "game_label": "耳朵",
+      "category": "身体",
+      "pinyin": "er",
+      "homophones": [
+        "二"
+      ],
+      "use_note": "可用于听觉题",
+      "source": "base_selected"
+    },
+    {
+      "index": 10714,
+      "filename": "011185.jpg",
+      "label": "蜘蛛",
+      "status": "api_ok",
+      "game_label": "蜘蛛",
+      "category": "动物",
+      "pinyin": "zhi_zhu",
+      "homophones": [
+        "知",
+        "支",
+        "祝"
+      ],
+      "use_note": "可用于“蜘蛛/知足/祝福”类题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 10804,
+      "filename": "011282.jpg",
+      "label": "桌子",
+      "status": "api_ok",
+      "game_label": "桌子",
+      "category": "物品",
+      "pinyin": "zhuo",
+      "homophones": [
+        "卓",
+        "着"
+      ],
+      "use_note": "可用于“卓尔不群”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 10962,
+      "filename": "011471.jpg",
+      "label": "月亮",
+      "status": "api_ok",
+      "game_label": "月亮",
+      "category": "自然",
+      "pinyin": "yue",
+      "homophones": [
+        "悦"
+      ],
+      "use_note": "可用于“花好月圆”",
+      "source": "base_selected"
+    },
+    {
+      "index": 10982,
+      "filename": "011495.jpg",
+      "label": "热气球",
+      "status": "api_ok",
+      "game_label": "热气球",
+      "category": "自然",
+      "pinyin": "qiu",
+      "homophones": [
+        "求",
+        "球"
+      ],
+      "use_note": "可用于“有求必应、球球了”",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 11319,
+      "filename": "011894.jpg",
+      "label": "小恐龙",
+      "status": "api_ok",
+      "game_label": "恐龙",
+      "category": "动物",
+      "pinyin": "kong_long",
+      "homophones": [
+        "恐",
+        "空",
+        "隆"
+      ],
+      "use_note": "可用于“恐龙/空隆”类趣味题",
+      "source": "expanded_from_full_json"
+    },
+    {
+      "index": 11333,
+      "filename": "011910.jpg",
+      "label": "钱包",
+      "status": "api_ok",
+      "game_label": "钱包",
+      "category": "物品",
+      "pinyin": "qian_bao",
+      "homophones": [
+        "钱",
+        "前",
+        "包"
+      ],
+      "use_note": "可用于“前程似锦、钱包鼓鼓”",
+      "source": "expanded_from_full_json"
+    }
+  ]
+}

@@ -1,0 +1,2421 @@
+{
+  "metadata": {
+    "game_name": "地书 · 谐音梗挑战",
+    "source_symbol_library": "usable_symbols_expanded_removed_selected_more_fixed.json",
+    "question_count": 75,
+    "image_path_note": "程序读取图片时，可用 symbols_dir / filename 拼接；filename 与原始标注文件保持一致。",
+    "modes": [
+      "homophone_choice",
+      "visual_idiom_choice"
+    ],
+    "base_question_file": "questions.json",
+    "base_question_count": 35,
+    "added_question_count": 65,
+    "new_question_id_range": [
+      36,
+      100
+    ],
+    "expansion_rule": "在原35题基础上，使用扩展后的精选符号库继续补充谐音梗/看图猜词题；保留每题symbols中的filename、label、game_label字段格式，filename不重命名。",
+    "validation": "所有保留题目引用的 filename 均能在修改后的扩展符号库中找到。",
+    "difficulty_counts": {
+      "easy": 50,
+      "medium": 20,
+      "hard": 5
+    },
+    "type_counts": {
+      "homophone_choice": 45,
+      "visual_idiom_choice": 30
+    },
+    "removed_question_count": 35,
+    "removed_question_ids": [
+      2,
+      8,
+      9,
+      12,
+      14,
+      15,
+      17,
+      18,
+      27,
+      29,
+      31,
+      32,
+      35,
+      36,
+      37,
+      38,
+      39,
+      45,
+      46,
+      49,
+      50,
+      51,
+      52,
+      53,
+      56,
+      63,
+      75,
+      77,
+      78,
+      79,
+      81,
+      89,
+      92,
+      96,
+      99
+    ],
+    "removed_reason": "删除了引用当前符号库中不存在filename的题目，主要对应此前从符号库删除的编号。",
+    "renumbered": "true，题目 id 已重新编号为连续 1 到 75",
+    "old_id_to_new_id": {
+      "1": 1,
+      "3": 2,
+      "4": 3,
+      "5": 4,
+      "6": 5,
+      "7": 6,
+      "10": 7,
+      "11": 8,
+      "13": 9,
+      "16": 10,
+      "19": 11,
+      "20": 12,
+      "21": 13,
+      "22": 14,
+      "23": 15,
+      "24": 16,
+      "25": 17,
+      "26": 18,
+      "28": 19,
+      "30": 20,
+      "33": 21,
+      "34": 22,
+      "40": 23,
+      "41": 24,
+      "42": 25,
+      "43": 26,
+      "44": 27,
+      "47": 28,
+      "48": 29,
+      "54": 30,
+      "55": 31,
+      "57": 32,
+      "58": 33,
+      "59": 34,
+      "60": 35,
+      "61": 36,
+      "62": 37,
+      "64": 38,
+      "65": 39,
+      "66": 40,
+      "67": 41,
+      "68": 42,
+      "69": 43,
+      "70": 44,
+      "71": 45,
+      "72": 46,
+      "73": 47,
+      "74": 48,
+      "76": 49,
+      "80": 50,
+      "82": 51,
+      "83": 52,
+      "84": 53,
+      "85": 54,
+      "86": 55,
+      "87": 56,
+      "88": 57,
+      "90": 58,
+      "91": 59,
+      "93": 60,
+      "94": 61,
+      "95": 62,
+      "97": 63,
+      "98": 64,
+      "100": 65
+    },
+    "removed_question_count_latest_operation": 10,
+    "removed_symbol_identifiers_latest_operation": [
+      1232,
+      1496,
+      1782,
+      1843,
+      2677,
+      2927,
+      3596,
+      3761,
+      5010,
+      9434,
+      9619,
+      11775
+    ],
+    "latest_expansion_rule": "基于 usable_symbols_expanded_removed_selected_more_fixed.json 中仍保留的符号编号继续补充题目；新增题目不重复已有答案，且不重复已有符号组合。",
+    "latest_added_question_count": 20,
+    "latest_added_easy_count": 16,
+    "latest_added_hard_count": 4,
+    "latest_new_question_id_range": [
+      56,
+      75
+    ],
+    "dedupe_adjustments_latest_operation": [
+      {
+        "question_id": 3,
+        "answer": "兔然暴富",
+        "old_symbols": [
+          "005504.jpg",
+          "003387.jpg"
+        ],
+        "new_symbols": [
+          "005504.jpg",
+          "003387.jpg",
+          "001960.jpg"
+        ],
+        "reason": "原题与“前兔似锦”使用同一组图片，追加“惊喜”符号后避免图片组合重复。"
+      }
+    ],
+    "validation_latest_operation": "所有题目引用的 filename 均存在于当前扩展符号库；全题库答案不重复；全题库符号组合不重复；easy=50，hard=5。",
+    "old_id_to_new_id_latest_operation": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16,
+      "17": 17,
+      "18": 18,
+      "19": 19,
+      "20": 20,
+      "21": 21,
+      "22": 22,
+      "23": 23,
+      "24": 24,
+      "25": 25,
+      "26": 26,
+      "27": 27,
+      "28": 28,
+      "29": 29,
+      "30": 30,
+      "31": 31,
+      "32": 32,
+      "33": 33,
+      "34": 34,
+      "35": 35,
+      "36": 36,
+      "37": 37,
+      "38": 38,
+      "39": 39,
+      "40": 40,
+      "41": 41,
+      "42": 42,
+      "43": 43,
+      "44": 44,
+      "45": 45,
+      "46": 46,
+      "47": 47,
+      "48": 48,
+      "49": 49,
+      "50": 50,
+      "51": 51,
+      "52": 52,
+      "53": 53,
+      "54": 54,
+      "55": 55,
+      "56": 56,
+      "57": 57,
+      "58": 58,
+      "59": 59,
+      "60": 60,
+      "61": 61,
+      "62": 62,
+      "63": 63,
+      "64": 64,
+      "65": 65,
+      "66": 66,
+      "67": 67,
+      "68": 68,
+      "69": 69,
+      "70": 70,
+      "71": 71,
+      "72": 72,
+      "73": 73,
+      "74": 74,
+      "75": 75
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "003172.jpg",
+          "label": "鱼",
+          "game_label": "鱼"
+        }
+      ],
+      "answer": "年年有余",
+      "options": [
+        "好运有余",
+        "如鱼得水",
+        "年年有余",
+        "鱼你同行"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“鱼”和“余”谐音，单个鱼符号可以联想到祝福语“年年有余”。"
+    },
+    {
+      "id": 2,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "003387.jpg",
+          "label": "钱袋",
+          "game_label": "钱袋"
+        },
+        {
+          "filename": "005504.jpg",
+          "label": "兔子",
+          "game_label": "兔子"
+        }
+      ],
+      "answer": "前兔似锦",
+      "options": [
+        "招财进宝",
+        "大吉大利",
+        "前兔似锦",
+        "兔然暴富"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“钱”谐音“前”，“兔”谐音“途”，对应网络祝福语“前兔似锦”。"
+    },
+    {
+      "id": 3,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "005504.jpg",
+          "label": "兔子",
+          "game_label": "兔子"
+        },
+        {
+          "filename": "003387.jpg",
+          "label": "钱袋",
+          "game_label": "钱袋"
+        },
+        {
+          "filename": "001960.jpg",
+          "label": "惊喜",
+          "game_label": "惊喜"
+        }
+      ],
+      "answer": "兔然暴富",
+      "options": [
+        "前兔似锦",
+        "祝你发财",
+        "兔然暴富",
+        "财源滚滚"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“兔”谐音“突”，钱袋表示财富，惊喜表情提示突然出现的惊喜，因此是“兔然暴富”。"
+    },
+    {
+      "id": 4,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "005090.jpg",
+          "label": "公鸡",
+          "game_label": "鸡"
+        },
+        {
+          "filename": "000166.jpg",
+          "label": "钟表",
+          "game_label": "钟表"
+        }
+      ],
+      "answer": "机不可失",
+      "options": [
+        "大吉大利",
+        "机不可失",
+        "无稽之谈",
+        "闻鸡起舞"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“鸡”谐音“机”，钟表提示“时机”，所以答案是“机不可失”。"
+    },
+    {
+      "id": 5,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "005090.jpg",
+          "label": "公鸡",
+          "game_label": "鸡"
+        },
+        {
+          "filename": "000130.jpg",
+          "label": "对话气泡",
+          "game_label": "对话气泡"
+        }
+      ],
+      "answer": "无稽之谈",
+      "options": [
+        "闻鸡起舞",
+        "机不可失",
+        "无稽之谈",
+        "鸡飞狗跳"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“鸡”谐音“稽”，对话气泡表示“谈”，所以是“无稽之谈”。"
+    },
+    {
+      "id": 6,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "005090.jpg",
+          "label": "公鸡",
+          "game_label": "鸡"
+        },
+        {
+          "filename": "003387.jpg",
+          "label": "钱袋",
+          "game_label": "钱袋"
+        }
+      ],
+      "answer": "大吉大利",
+      "options": [
+        "招财进宝",
+        "前兔似锦",
+        "大吉大利",
+        "机不可失"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“鸡”谐音“吉”，钱袋表示“利/财”，可联想到祝福语“大吉大利”。"
+    },
+    {
+      "id": 7,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "005499.jpg",
+          "label": "猪",
+          "game_label": "猪"
+        },
+        {
+          "filename": "003387.jpg",
+          "label": "钱袋",
+          "game_label": "钱袋"
+        }
+      ],
+      "answer": "祝你发财",
+      "options": [
+        "诸事顺利",
+        "财源滚滚",
+        "招财猫",
+        "祝你发财"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“猪”谐音“祝”，钱袋表示发财，因此是“祝你发财”。"
+    },
+    {
+      "id": 8,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "005499.jpg",
+          "label": "猪",
+          "game_label": "猪"
+        },
+        {
+          "filename": "001212.jpg",
+          "label": "OK手势",
+          "game_label": "OK手势"
+        }
+      ],
+      "answer": "诸事顺利",
+      "options": [
+        "平安喜乐",
+        "诸事顺利",
+        "事事OK",
+        "祝你发财"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“猪”谐音“诸”，OK 手势表示顺利，所以是“诸事顺利”。"
+    },
+    {
+      "id": 9,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "006018.jpg",
+          "label": "鸭子",
+          "game_label": "鸭子"
+        },
+        {
+          "filename": "003154.jpg",
+          "label": "山峰",
+          "game_label": "山峰"
+        }
+      ],
+      "answer": "鸭梨山大",
+      "options": [
+        "风生水起",
+        "牛气冲天",
+        "鸭梨山大",
+        "登峰造极"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“鸭”谐音“压”，山峰表示“大山”，合起来就是网络表达“鸭梨山大”。"
+    },
+    {
+      "id": 10,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "000090.jpg",
+          "label": "邮件",
+          "game_label": "邮件"
+        },
+        {
+          "filename": "005096.jpg",
+          "label": "贝壳",
+          "game_label": "贝壳"
+        },
+        {
+          "filename": "000402.jpg",
+          "label": "行人",
+          "game_label": "行人"
+        }
+      ],
+      "answer": "有备而来",
+      "options": [
+        "书香门第",
+        "有备而来",
+        "邮你真好",
+        "与众不同"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“邮件”的“邮”谐音“有”，“贝”谐音“备”，行人表示“来”，组合成“有备而来”。"
+    },
+    {
+      "id": 11,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001097.jpg",
+          "label": "笑脸",
+          "game_label": "笑脸"
+        },
+        {
+          "filename": "001808.jpg",
+          "label": "门",
+          "game_label": "门"
+        }
+      ],
+      "answer": "笑口常开",
+      "options": [
+        "平安喜乐",
+        "云开见日",
+        "有口皆碑",
+        "笑口常开"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "笑脸表示“笑口”，门表示“开”，组合成“笑口常开”。"
+    },
+    {
+      "id": 12,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "002676.jpg",
+          "label": "花朵",
+          "game_label": "花朵"
+        },
+        {
+          "filename": "011471.jpg",
+          "label": "月亮",
+          "game_label": "月亮"
+        }
+      ],
+      "answer": "花好月圆",
+      "options": [
+        "鸟语花香",
+        "花好月圆",
+        "心心相印",
+        "云开见日"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "花朵表示“花”，月亮表示“月”，组合成祝福语“花好月圆”。"
+    },
+    {
+      "id": 13,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "000926.jpg",
+          "label": "小鸟",
+          "game_label": "小鸟"
+        },
+        {
+          "filename": "001276.jpg",
+          "label": "下雨",
+          "game_label": "下雨"
+        },
+        {
+          "filename": "002676.jpg",
+          "label": "花朵",
+          "game_label": "花朵"
+        }
+      ],
+      "answer": "鸟语花香",
+      "options": [
+        "鱼你同行",
+        "鸟语花香",
+        "花好月圆",
+        "如鱼得水"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "小鸟表示“鸟”，雨谐音“语”，花朵表示“花”，所以是“鸟语花香”。"
+    },
+    {
+      "id": 14,
+      "type": "visual_idiom_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "001336.jpg",
+          "label": "书本",
+          "game_label": "书本"
+        },
+        {
+          "filename": "001808.jpg",
+          "label": "门",
+          "game_label": "门"
+        }
+      ],
+      "answer": "书香门第",
+      "options": [
+        "笑口常开",
+        "书香门第",
+        "金榜题名",
+        "有备而来"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "书本表示“书”，门表示“门第”，组合成“书香门第”。"
+    },
+    {
+      "id": 15,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001445.jpg",
+          "label": "小船",
+          "game_label": "小船"
+        },
+        {
+          "filename": "007117.jpg",
+          "label": "风扇",
+          "game_label": "风扇"
+        }
+      ],
+      "answer": "一帆风顺",
+      "options": [
+        "风生水起",
+        "如鱼得水",
+        "一路顺风",
+        "一帆风顺"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "小船提示“帆船”，风扇提示“风”，组合成“一帆风顺”。"
+    },
+    {
+      "id": 16,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "007117.jpg",
+          "label": "风扇",
+          "game_label": "风扇"
+        },
+        {
+          "filename": "000710.jpg",
+          "label": "海浪",
+          "game_label": "海浪"
+        }
+      ],
+      "answer": "风生水起",
+      "options": [
+        "一帆风顺",
+        "如鱼得水",
+        "风生水起",
+        "财源滚滚"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "风扇表示“风”，海浪表示“水起”，组合成“风生水起”。"
+    },
+    {
+      "id": 17,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "003172.jpg",
+          "label": "鱼",
+          "game_label": "鱼"
+        },
+        {
+          "filename": "000710.jpg",
+          "label": "海浪",
+          "game_label": "海浪"
+        }
+      ],
+      "answer": "如鱼得水",
+      "options": [
+        "鱼你同行",
+        "年年有余",
+        "如鱼得水",
+        "风生水起"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "鱼遇到水，正好对应成语“如鱼得水”。"
+    },
+    {
+      "id": 18,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001598.jpg",
+          "label": "猫",
+          "game_label": "猫"
+        },
+        {
+          "filename": "003387.jpg",
+          "label": "钱袋",
+          "game_label": "钱袋"
+        }
+      ],
+      "answer": "招财猫",
+      "options": [
+        "祝你发财",
+        "财源滚滚",
+        "招财猫",
+        "猫有财"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "猫加钱袋容易联想到“招财猫”。"
+    },
+    {
+      "id": 19,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "003172.jpg",
+          "label": "鱼",
+          "game_label": "鱼"
+        },
+        {
+          "filename": "000402.jpg",
+          "label": "行人",
+          "game_label": "行人"
+        }
+      ],
+      "answer": "鱼你同行",
+      "options": [
+        "年年有余",
+        "鱼你同行",
+        "与众不同",
+        "如鱼得水"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“鱼”谐音“与”，行人表示同行，组合成“鱼你同行”。"
+    },
+    {
+      "id": 20,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "003574.jpg",
+          "label": "灯泡",
+          "game_label": "灯泡"
+        },
+        {
+          "filename": "003154.jpg",
+          "label": "山峰",
+          "game_label": "山峰"
+        }
+      ],
+      "answer": "登峰造极",
+      "options": [
+        "鸭梨山大",
+        "登峰造极",
+        "牛气冲天",
+        "时来运转"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“灯”谐音“登”，山峰提示“峰”，组合成“登峰造极”。"
+    },
+    {
+      "id": 21,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "003387.jpg",
+          "label": "钱袋",
+          "game_label": "钱袋"
+        },
+        {
+          "filename": "000710.jpg",
+          "label": "海浪",
+          "game_label": "海浪"
+        }
+      ],
+      "answer": "财源滚滚",
+      "options": [
+        "招财进宝",
+        "财源滚滚",
+        "兔然暴富",
+        "风生水起"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "钱袋表示财富，海浪表示“滚滚而来”，组合成“财源滚滚”。"
+    },
+    {
+      "id": 22,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "000220.jpg",
+          "label": "磁带",
+          "game_label": "磁带"
+        },
+        {
+          "filename": "001419.jpg",
+          "label": "红酒瓶",
+          "game_label": "酒瓶"
+        }
+      ],
+      "answer": "期待已久",
+      "options": [
+        "有备而来",
+        "期待已久",
+        "久久为功",
+        "喜出望外"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“磁带”可谐音联想到“期待”，“酒”谐音“久”，组合成“期待已久”。"
+    },
+    {
+      "id": 23,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "000322.jpg",
+          "label": "马桶",
+          "game_label": "马桶"
+        },
+        {
+          "filename": "001212.jpg",
+          "label": "OK手势",
+          "game_label": "OK手势"
+        }
+      ],
+      "answer": "马到成功",
+      "options": [
+        "马到成功",
+        "事事OK",
+        "马上有钱",
+        "心想事成"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "马桶取“马”的谐音元素，OK 手势表示成功，组合成“马到成功”。"
+    },
+    {
+      "id": 24,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001148.jpg",
+          "label": "短袖T恤",
+          "game_label": "衣服"
+        },
+        {
+          "filename": "001247.jpg",
+          "label": "吐司面包",
+          "game_label": "面包"
+        },
+        {
+          "filename": "001097.jpg",
+          "label": "笑脸",
+          "game_label": "笑脸"
+        }
+      ],
+      "answer": "衣食无忧",
+      "options": [
+        "衣食无忧",
+        "平安喜乐",
+        "包你满意",
+        "美梦成真"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "衣服表示“衣”，面包表示“食”，笑脸表示无忧快乐，组合成“衣食无忧”。"
+    },
+    {
+      "id": 25,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001150.jpg",
+          "label": "裤子",
+          "game_label": "裤子"
+        },
+        {
+          "filename": "003574.jpg",
+          "label": "灯泡",
+          "game_label": "灯泡"
+        }
+      ],
+      "answer": "酷到发光",
+      "options": [
+        "裤子太长",
+        "酷到发光",
+        "心想事成",
+        "灯火通明"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“裤”谐音“酷”，灯泡表示发光，所以答案是“酷到发光”。"
+    },
+    {
+      "id": 26,
+      "type": "visual_idiom_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "007117.jpg",
+          "label": "风扇",
+          "game_label": "风扇"
+        },
+        {
+          "filename": "001276.jpg",
+          "label": "下雨",
+          "game_label": "下雨"
+        },
+        {
+          "filename": "001445.jpg",
+          "label": "小船",
+          "game_label": "小船"
+        }
+      ],
+      "answer": "风雨同舟",
+      "options": [
+        "风雨同舟",
+        "一帆风顺",
+        "如鱼得水",
+        "水涨船高"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "风扇表示风，下雨表示雨，小船表示舟，组合成“风雨同舟”。"
+    },
+    {
+      "id": 27,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001808.jpg",
+          "label": "门",
+          "game_label": "门"
+        },
+        {
+          "filename": "000556.jpg",
+          "label": "眼睛",
+          "game_label": "眼睛"
+        },
+        {
+          "filename": "003154.jpg",
+          "label": "山峰",
+          "game_label": "山峰"
+        }
+      ],
+      "answer": "开门见山",
+      "options": [
+        "笑口常开",
+        "开门见山",
+        "闭门造车",
+        "一见钟情"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "门表示“开门”，眼睛表示“见”，山峰表示“山”，组合成“开门见山”。"
+    },
+    {
+      "id": 28,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001735.jpg",
+          "label": "喇叭",
+          "game_label": "喇叭"
+        },
+        {
+          "filename": "007117.jpg",
+          "label": "风扇",
+          "game_label": "风扇"
+        }
+      ],
+      "answer": "拉风",
+      "options": [
+        "吹牛",
+        "拉风",
+        "风生水起",
+        "风雨同舟"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“喇叭”的“喇”可谐音“拉”，风扇表示“风”，组合成“拉风”。"
+    },
+    {
+      "id": 29,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "003398.jpg",
+          "label": "加油机",
+          "game_label": "加油机"
+        },
+        {
+          "filename": "002063.jpg",
+          "label": "愤怒",
+          "game_label": "生气"
+        }
+      ],
+      "answer": "加油打气",
+      "options": [
+        "加油打气",
+        "财源滚滚",
+        "心平气和",
+        "牛气冲天"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "加油机表示“加油”，生气图标取“气”，组合成“加油打气”。"
+    },
+    {
+      "id": 30,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "006786.jpg",
+          "label": "菜刀",
+          "game_label": "菜刀"
+        },
+        {
+          "filename": "002280.jpg",
+          "label": "手掌",
+          "game_label": "手掌"
+        },
+        {
+          "filename": "003387.jpg",
+          "label": "钱袋",
+          "game_label": "钱袋"
+        }
+      ],
+      "answer": "财到手",
+      "options": [
+        "财到手",
+        "手到擒来",
+        "有钱任性",
+        "招财进宝"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“菜刀”谐音“财到”，手掌表示“手”，钱袋强化财富含义，所以是“财到手”。"
+    },
+    {
+      "id": 31,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "000090.jpg",
+          "label": "邮件",
+          "game_label": "邮件"
+        },
+        {
+          "filename": "006265.jpg",
+          "label": "金钱",
+          "game_label": "金钱"
+        },
+        {
+          "filename": "000599.jpg",
+          "label": "人物",
+          "game_label": "人物"
+        }
+      ],
+      "answer": "有钱任性",
+      "options": [
+        "有钱任性",
+        "邮你真好",
+        "与众不同",
+        "财源滚滚"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "邮件的“邮”谐音“有”，金钱表示钱，人物表示人/任，组合成“有钱任性”。"
+    },
+    {
+      "id": 32,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "003387.jpg",
+          "label": "钱袋",
+          "game_label": "钱袋"
+        },
+        {
+          "filename": "005504.jpg",
+          "label": "兔子",
+          "game_label": "兔子"
+        },
+        {
+          "filename": "011471.jpg",
+          "label": "月亮",
+          "game_label": "月亮"
+        }
+      ],
+      "answer": "前兔无量",
+      "options": [
+        "前兔无量",
+        "兔然暴富",
+        "花好月圆",
+        "前途似锦"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "钱袋的“钱”谐音“前”，兔子谐音“途”，月亮的“亮”接近“量”，组合成网络祝福“前兔无量”。"
+    },
+    {
+      "id": 33,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "000322.jpg",
+          "label": "马桶",
+          "game_label": "马桶"
+        },
+        {
+          "filename": "000090.jpg",
+          "label": "邮件",
+          "game_label": "邮件"
+        },
+        {
+          "filename": "003387.jpg",
+          "label": "钱袋",
+          "game_label": "钱袋"
+        }
+      ],
+      "answer": "马上有钱",
+      "options": [
+        "马上有钱",
+        "马到成功",
+        "有备而来",
+        "升官发财"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "马桶取“马”，邮件的“邮”谐音“有”，钱袋表示钱，组合成“马上有钱”。"
+    },
+    {
+      "id": 34,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "005474.jpg",
+          "label": "螃蟹",
+          "game_label": "螃蟹"
+        },
+        {
+          "filename": "000090.jpg",
+          "label": "邮件",
+          "game_label": "邮件"
+        },
+        {
+          "filename": "000402.jpg",
+          "label": "行人",
+          "game_label": "行人"
+        }
+      ],
+      "answer": "谢谢有你",
+      "options": [
+        "谢谢有你",
+        "有备而来",
+        "与众不同",
+        "感谢同行"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "螃蟹的“蟹”谐音“谢”，邮件谐音“有”，行人可指“你/人”，组合成“谢谢有你”。"
+    },
+    {
+      "id": 35,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001960.jpg",
+          "label": "惊喜",
+          "game_label": "惊喜"
+        },
+        {
+          "filename": "005498.jpg",
+          "label": "黑绵羊",
+          "game_label": "羊"
+        },
+        {
+          "filename": "000478.jpg",
+          "label": "太阳",
+          "game_label": "太阳"
+        }
+      ],
+      "answer": "喜气羊羊",
+      "options": [
+        "喜气羊羊",
+        "阳光灿烂",
+        "牛气冲天",
+        "平安喜乐"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "惊喜取“喜”，太阳提示阳光/洋气，羊谐音“洋”，组合成“喜气羊羊”。"
+    },
+    {
+      "id": 36,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "005505.jpg",
+          "label": "蛇",
+          "game_label": "蛇"
+        },
+        {
+          "filename": "001212.jpg",
+          "label": "OK手势",
+          "game_label": "OK手势"
+        }
+      ],
+      "answer": "什么都好",
+      "options": [
+        "什么都好",
+        "蛇行天下",
+        "事事OK",
+        "诸事顺利"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "蛇的读音可联想到“什”，OK 手势表示“都好”，组合成“什么都好”。"
+    },
+    {
+      "id": 37,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001200.jpg",
+          "label": "呕吐",
+          "game_label": "吐"
+        },
+        {
+          "filename": "001097.jpg",
+          "label": "笑脸",
+          "game_label": "笑脸"
+        }
+      ],
+      "answer": "一吐为快",
+      "options": [
+        "一吐为快",
+        "笑口常开",
+        "心直口快",
+        "吐故纳新"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "吐的动作加笑脸表示说出来之后很痛快，对应“一吐为快”。"
+    },
+    {
+      "id": 38,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "011185.jpg",
+          "label": "蜘蛛",
+          "game_label": "蜘蛛"
+        },
+        {
+          "filename": "002723.jpg",
+          "label": "脚印",
+          "game_label": "脚印"
+        },
+        {
+          "filename": "001097.jpg",
+          "label": "笑脸",
+          "game_label": "笑脸"
+        }
+      ],
+      "answer": "知足常乐",
+      "options": [
+        "知足常乐",
+        "脚踏实地",
+        "笑口常开",
+        "一见钟情"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "蜘蛛取“知”，脚印提示“足”，笑脸表示快乐，组合成“知足常乐”。"
+    },
+    {
+      "id": 39,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "001539.jpg",
+          "label": "牙齿",
+          "game_label": "牙齿"
+        },
+        {
+          "filename": "003130.jpg",
+          "label": "雪山",
+          "game_label": "雪山"
+        },
+        {
+          "filename": "001276.jpg",
+          "label": "下雨",
+          "game_label": "下雨"
+        }
+      ],
+      "answer": "牙牙学语",
+      "options": [
+        "牙牙学语",
+        "雪中送炭",
+        "鸟语花香",
+        "学有所成"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "牙齿提示“牙牙”，雪山的“雪”谐音“学”，下雨的“雨”谐音“语”，组合成“牙牙学语”。"
+    },
+    {
+      "id": 40,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "002723.jpg",
+          "label": "脚印",
+          "game_label": "脚印"
+        },
+        {
+          "filename": "000905.jpg",
+          "label": "地球",
+          "game_label": "地球"
+        }
+      ],
+      "answer": "脚踏实地",
+      "options": [
+        "脚踏实地",
+        "如鱼得水",
+        "步步高升",
+        "心有所属"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "脚印表示“脚踏”，地球表示“实地/大地”，组合成“脚踏实地”。"
+    },
+    {
+      "id": 41,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "003939.jpg",
+          "label": "大脑",
+          "game_label": "大脑"
+        },
+        {
+          "filename": "001808.jpg",
+          "label": "门",
+          "game_label": "门"
+        }
+      ],
+      "answer": "脑洞大开",
+      "options": [
+        "开门见山",
+        "脑洞大开",
+        "一见钟情",
+        "文思泉涌"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "大脑表示“脑洞”，门表示打开，所以是“脑洞大开”。"
+    },
+    {
+      "id": 42,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001447.jpg",
+          "label": "玉米",
+          "game_label": "玉米"
+        },
+        {
+          "filename": "000556.jpg",
+          "label": "眼睛",
+          "game_label": "眼睛"
+        },
+        {
+          "filename": "001097.jpg",
+          "label": "笑脸",
+          "game_label": "笑脸"
+        }
+      ],
+      "answer": "遇见美好",
+      "options": [
+        "遇见美好",
+        "一见钟情",
+        "笑口常开",
+        "花好月圆"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "玉米的“玉”谐音“遇”，眼睛表示“见”，笑脸表示美好，组合成“遇见美好”。"
+    },
+    {
+      "id": 43,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001242.jpg",
+          "label": "煎蛋",
+          "game_label": "煎蛋"
+        },
+        {
+          "filename": "001097.jpg",
+          "label": "笑脸",
+          "game_label": "笑脸"
+        }
+      ],
+      "answer": "简单快乐",
+      "options": [
+        "简单快乐",
+        "美梦成真",
+        "笑口常开",
+        "心想事成"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "“煎蛋”谐音“简单”，笑脸表示快乐，组合成“简单快乐”。"
+    },
+    {
+      "id": 44,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "003546.jpg",
+          "label": "带茶包茶杯",
+          "game_label": "茶"
+        },
+        {
+          "filename": "000130.jpg",
+          "label": "对话气泡",
+          "game_label": "对话气泡"
+        },
+        {
+          "filename": "001276.jpg",
+          "label": "下雨",
+          "game_label": "下雨"
+        }
+      ],
+      "answer": "茶言茶语",
+      "options": [
+        "茶言茶语",
+        "鸟语花香",
+        "无稽之谈",
+        "口若悬河"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "茶表示“茶”，对话气泡表示“言”，下雨的“雨”谐音“语”，组合成“茶言茶语”。"
+    },
+    {
+      "id": 45,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "001419.jpg",
+          "label": "红酒瓶",
+          "game_label": "酒瓶"
+        },
+        {
+          "filename": "001902.jpg",
+          "label": "鞠躬",
+          "game_label": "鞠躬"
+        }
+      ],
+      "answer": "久久为功",
+      "options": [
+        "久久为功",
+        "一举成功",
+        "期待已久",
+        "鞠躬尽瘁"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "酒瓶的“酒”谐音“久”，鞠躬的“躬”谐音“功”，组合成“久久为功”。"
+    },
+    {
+      "id": 46,
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "011028.jpg",
+          "label": "耳朵",
+          "game_label": "耳朵"
+        },
+        {
+          "filename": "000130.jpg",
+          "label": "对话气泡",
+          "game_label": "对话气泡"
+        },
+        {
+          "filename": "010291.jpg",
+          "label": "说话",
+          "game_label": "说话"
+        }
+      ],
+      "answer": "二话不说",
+      "options": [
+        "二话不说",
+        "洗耳恭听",
+        "无稽之谈",
+        "说来话长"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "耳朵取“二”，对话气泡和说话表示“话/说”，组合成“二话不说”。"
+    },
+    {
+      "id": 47,
+      "type": "visual_idiom_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "002329.jpg",
+          "label": "无线网络",
+          "game_label": "无线网络"
+        },
+        {
+          "filename": "001808.jpg",
+          "label": "门",
+          "game_label": "门"
+        },
+        {
+          "filename": "000218.jpg",
+          "label": "面条",
+          "game_label": "面条"
+        }
+      ],
+      "answer": "网开一面",
+      "options": [
+        "网开一面",
+        "开门见山",
+        "面面俱到",
+        "一路顺风"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "无线网络表示“网”，门表示“开”，面条表示“面”，组合成“网开一面”。"
+    },
+    {
+      "id": 48,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "003130.jpg",
+          "label": "雪山",
+          "game_label": "雪山"
+        },
+        {
+          "filename": "000090.jpg",
+          "label": "邮件",
+          "game_label": "邮件"
+        },
+        {
+          "filename": "001212.jpg",
+          "label": "OK手势",
+          "game_label": "OK手势"
+        }
+      ],
+      "answer": "学有所成",
+      "options": [
+        "学有所成",
+        "雪中送炭",
+        "有备而来",
+        "事事OK"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "雪山的“雪”谐音“学”，邮件的“邮”谐音“有”，OK 手势表示完成，组合成“学有所成”。"
+    },
+    {
+      "id": 49,
+      "type": "visual_idiom_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "006615.jpg",
+          "label": "水波",
+          "game_label": "水波"
+        },
+        {
+          "filename": "001445.jpg",
+          "label": "小船",
+          "game_label": "小船"
+        },
+        {
+          "filename": "000057.jpg",
+          "label": "高楼大厦",
+          "game_label": "高楼"
+        }
+      ],
+      "answer": "水涨船高",
+      "options": [
+        "水涨船高",
+        "一帆风顺",
+        "风生水起",
+        "高山流水"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "水波表示“水涨”，小船表示“船”，高楼表示“高”，组合成“水涨船高”。"
+    },
+    {
+      "id": 50,
+      "type": "homophone_choice",
+      "difficulty": "hard",
+      "symbols": [
+        {
+          "filename": "000905.jpg",
+          "label": "地球",
+          "game_label": "地球"
+        },
+        {
+          "filename": "011185.jpg",
+          "label": "蜘蛛",
+          "game_label": "蜘蛛"
+        },
+        {
+          "filename": "000244.jpg",
+          "label": "礼物盒",
+          "game_label": "礼物盒"
+        }
+      ],
+      "answer": "求之不得",
+      "options": [
+        "求之不得",
+        "有求必应",
+        "礼尚往来",
+        "知足常乐"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "地球的“球”谐音“求”，蜘蛛取“之/知”的近音，礼物盒表示想得到，组合成“求之不得”。"
+    },
+    {
+      "id": 51,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "000780.jpg",
+          "label": "睡觉",
+          "game_label": "睡觉"
+        },
+        {
+          "filename": "010929.jpg",
+          "label": "大象",
+          "game_label": "大象"
+        },
+        {
+          "filename": "001212.jpg",
+          "label": "OK手势",
+          "game_label": "OK手势"
+        }
+      ],
+      "answer": "梦想成真",
+      "options": [
+        "梦想成真",
+        "美梦成真",
+        "心想事成",
+        "事事OK"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "睡觉表示“梦”，大象的“象”谐音“想”，OK 手势表示实现，组合成“梦想成真”。"
+    },
+    {
+      "id": 52,
+      "type": "homophone_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "005454.jpg",
+          "label": "火锅",
+          "game_label": "火锅"
+        },
+        {
+          "filename": "003392.jpg",
+          "label": "熊",
+          "game_label": "熊"
+        }
+      ],
+      "answer": "火锅英雄",
+      "options": [
+        "火锅英雄",
+        "火树银花",
+        "牛气冲天",
+        "熊心壮志"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "火锅表示“火锅”，熊的“熊”谐音“雄”，组合成网络感较强的“火锅英雄”。"
+    },
+    {
+      "id": 53,
+      "type": "visual_idiom_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "001336.jpg",
+          "label": "书本",
+          "game_label": "书本"
+        },
+        {
+          "filename": "003154.jpg",
+          "label": "山峰",
+          "game_label": "山峰"
+        },
+        {
+          "filename": "000090.jpg",
+          "label": "邮件",
+          "game_label": "邮件"
+        },
+        {
+          "filename": "000513.jpg",
+          "label": "跑步",
+          "game_label": "跑步"
+        }
+      ],
+      "answer": "书山有路",
+      "options": [
+        "书山有路",
+        "学有所成",
+        "文思泉涌",
+        "平步青云"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "书本表示“书”，山峰表示“山”，邮件谐音“有”，跑步表示走路，组合成“书山有路”。"
+    },
+    {
+      "id": 54,
+      "type": "visual_idiom_choice",
+      "difficulty": "medium",
+      "symbols": [
+        {
+          "filename": "001238.jpg",
+          "label": "火焰",
+          "game_label": "火焰"
+        },
+        {
+          "filename": "003658.jpg",
+          "label": "松树",
+          "game_label": "树"
+        },
+        {
+          "filename": "002268.jpg",
+          "label": "银行卡",
+          "game_label": "银行卡"
+        },
+        {
+          "filename": "002676.jpg",
+          "label": "花朵",
+          "game_label": "花朵"
+        }
+      ],
+      "answer": "火树银花",
+      "options": [
+        "火树银花",
+        "花好月圆",
+        "点石成金",
+        "火锅英雄"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "火焰表示“火”，树表示“树”，银行卡取“银”，花朵表示“花”，组合成“火树银花”。"
+    },
+    {
+      "id": 55,
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001097.jpg",
+          "label": "笑脸",
+          "game_label": "笑脸"
+        },
+        {
+          "filename": "006786.jpg",
+          "label": "菜刀",
+          "game_label": "菜刀"
+        }
+      ],
+      "answer": "笑里藏刀",
+      "options": [
+        "笑里藏刀",
+        "简单快乐",
+        "财到手",
+        "笑口常开"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "笑脸表示“笑”，菜刀表示“刀”，组合起来直接提示“笑里藏刀”。"
+    },
+    {
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "000478.jpg",
+          "label": "太阳",
+          "game_label": "太阳"
+        },
+        {
+          "filename": "003574.jpg",
+          "label": "灯泡",
+          "game_label": "灯泡"
+        },
+        {
+          "filename": "002620.jpg",
+          "label": "大笑",
+          "game_label": "大笑"
+        }
+      ],
+      "answer": "阳光灿烂",
+      "options": [
+        "阳光灿烂",
+        "笑口常开",
+        "火树银花",
+        "一帆风顺"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "太阳表示“阳”，灯泡表示“光”，大笑表示灿烂开心，组合成“阳光灿烂”。",
+      "id": 56
+    },
+    {
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001886.jpg",
+          "label": "椅子",
+          "game_label": "椅子"
+        },
+        {
+          "filename": "000513.jpg",
+          "label": "跑步",
+          "game_label": "跑步"
+        },
+        {
+          "filename": "002676.jpg",
+          "label": "花朵",
+          "game_label": "花朵"
+        }
+      ],
+      "answer": "一路生花",
+      "options": [
+        "一路生花",
+        "一路顺风",
+        "花好月圆",
+        "步步高升"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "椅子取“一”，跑步表示“路/行走”，花朵表示“花”，组合成“一路生花”。",
+      "id": 57
+    },
+    {
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001808.jpg",
+          "label": "门",
+          "game_label": "门"
+        },
+        {
+          "filename": "002620.jpg",
+          "label": "大笑",
+          "game_label": "大笑"
+        }
+      ],
+      "answer": "开怀大笑",
+      "options": [
+        "开怀大笑",
+        "笑里藏刀",
+        "笑口常开",
+        "脑洞大开"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "门表示“开”，大笑表示“开怀大笑”的情绪状态。",
+      "id": 58
+    },
+    {
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "002620.jpg",
+          "label": "大笑",
+          "game_label": "大笑"
+        },
+        {
+          "filename": "001539.jpg",
+          "label": "牙齿",
+          "game_label": "牙齿"
+        }
+      ],
+      "answer": "笑掉大牙",
+      "options": [
+        "笑掉大牙",
+        "牙牙学语",
+        "笑口常开",
+        "简单快乐"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "大笑加牙齿，直接提示“笑掉大牙”。",
+      "id": 59
+    },
+    {
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "002676.jpg",
+          "label": "花朵",
+          "game_label": "花朵"
+        },
+        {
+          "filename": "000130.jpg",
+          "label": "对话气泡",
+          "game_label": "对话气泡"
+        },
+        {
+          "filename": "001276.jpg",
+          "label": "下雨",
+          "game_label": "下雨"
+        }
+      ],
+      "answer": "花言巧语",
+      "options": [
+        "花言巧语",
+        "茶言茶语",
+        "鸟语花香",
+        "无稽之谈"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "花朵表示“花”，对话气泡表示“言”，下雨的“雨”谐音“语”，组合成“花言巧语”。",
+      "id": 60
+    },
+    {
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001886.jpg",
+          "label": "椅子",
+          "game_label": "椅子"
+        },
+        {
+          "filename": "000556.jpg",
+          "label": "眼睛",
+          "game_label": "眼睛"
+        },
+        {
+          "filename": "003027.jpg",
+          "label": "狗",
+          "game_label": "狗"
+        }
+      ],
+      "answer": "一见如故",
+      "options": [
+        "一见如故",
+        "一见钟情",
+        "鱼你同行",
+        "开门见山"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "椅子取“一”，眼睛表示“见”，狗的“狗”谐音“故”，组合成“一见如故”。",
+      "id": 61
+    },
+    {
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001238.jpg",
+          "label": "火焰",
+          "game_label": "火焰"
+        },
+        {
+          "filename": "005454.jpg",
+          "label": "火锅",
+          "game_label": "火锅"
+        }
+      ],
+      "answer": "红红火火",
+      "options": [
+        "红红火火",
+        "火锅英雄",
+        "火树银花",
+        "加油打气"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "火焰和火锅都突出“火”，可联想到祝福语“红红火火”。",
+      "id": 62
+    },
+    {
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "000057.jpg",
+          "label": "高楼大厦",
+          "game_label": "高楼"
+        },
+        {
+          "filename": "006025.jpg",
+          "label": "五角星",
+          "game_label": "五角星"
+        },
+        {
+          "filename": "002620.jpg",
+          "label": "大笑",
+          "game_label": "大笑"
+        }
+      ],
+      "answer": "高高兴兴",
+      "options": [
+        "高高兴兴",
+        "步步高升",
+        "吉星高照",
+        "喜气羊羊"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "高楼表示“高”，五角星的“星”谐音“兴”，大笑表示开心，组合成“高高兴兴”。",
+      "id": 63
+    },
+    {
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001886.jpg",
+          "label": "椅子",
+          "game_label": "椅子"
+        },
+        {
+          "filename": "000513.jpg",
+          "label": "跑步",
+          "game_label": "跑步"
+        },
+        {
+          "filename": "001212.jpg",
+          "label": "OK手势",
+          "game_label": "OK手势"
+        }
+      ],
+      "answer": "一路顺利",
+      "options": [
+        "一路顺利",
+        "一路生花",
+        "一帆风顺",
+        "事事OK"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "椅子取“一”，跑步表示“路”，OK 手势表示顺利，组合成“一路顺利”。",
+      "id": 64
+    },
+    {
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "000244.jpg",
+          "label": "礼物盒",
+          "game_label": "礼物盒"
+        },
+        {
+          "filename": "000402.jpg",
+          "label": "行人",
+          "game_label": "行人"
+        }
+      ],
+      "answer": "礼尚往来",
+      "options": [
+        "礼尚往来",
+        "有备而来",
+        "谢谢有你",
+        "鱼你同行"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "礼物盒表示“礼”，行人表示“往来”，组合成“礼尚往来”。",
+      "id": 65
+    },
+    {
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001247.jpg",
+          "label": "吐司面包",
+          "game_label": "面包"
+        },
+        {
+          "filename": "000402.jpg",
+          "label": "行人",
+          "game_label": "行人"
+        },
+        {
+          "filename": "001097.jpg",
+          "label": "笑脸",
+          "game_label": "笑脸"
+        },
+        {
+          "filename": "001212.jpg",
+          "label": "OK手势",
+          "game_label": "OK手势"
+        }
+      ],
+      "answer": "包你满意",
+      "options": [
+        "包你满意",
+        "保你平安",
+        "衣食无忧",
+        "简单快乐"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "面包的“包”对应“包你”，笑脸和 OK 手势表示满意，所以是“包你满意”。",
+      "id": 66
+    },
+    {
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001212.jpg",
+          "label": "OK手势",
+          "game_label": "OK手势"
+        },
+        {
+          "filename": "007203.jpg",
+          "label": "双手合十",
+          "game_label": "合十"
+        }
+      ],
+      "answer": "好事成双",
+      "options": [
+        "好事成双",
+        "合适就好",
+        "诸事顺利",
+        "什么都好"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "OK 手势表示“好”，双手合十可以提示“双”，组合成祝福语“好事成双”。",
+      "id": 67
+    },
+    {
+      "type": "visual_idiom_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "011910.jpg",
+          "label": "钱包",
+          "game_label": "钱包"
+        },
+        {
+          "filename": "003387.jpg",
+          "label": "钱袋",
+          "game_label": "钱袋"
+        }
+      ],
+      "answer": "钱包鼓鼓",
+      "options": [
+        "钱包鼓鼓",
+        "财源滚滚",
+        "马上有钱",
+        "祝你发财"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "钱包和钱袋都表示钱财，组合成“钱包鼓鼓”。",
+      "id": 68
+    },
+    {
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "005090.jpg",
+          "label": "公鸡",
+          "game_label": "鸡"
+        },
+        {
+          "filename": "006025.jpg",
+          "label": "五角星",
+          "game_label": "五角星"
+        },
+        {
+          "filename": "000057.jpg",
+          "label": "高楼大厦",
+          "game_label": "高楼"
+        },
+        {
+          "filename": "000478.jpg",
+          "label": "太阳",
+          "game_label": "太阳"
+        }
+      ],
+      "answer": "吉星高照",
+      "options": [
+        "吉星高照",
+        "大吉大利",
+        "高高兴兴",
+        "阳光灿烂"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "鸡的“鸡”谐音“吉”，五角星表示“星”，高楼表示“高”，太阳表示“照”，组合成“吉星高照”。",
+      "id": 69
+    },
+    {
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "001886.jpg",
+          "label": "椅子",
+          "game_label": "椅子"
+        },
+        {
+          "filename": "001421.jpg",
+          "label": "咖啡杯",
+          "game_label": "咖啡杯"
+        },
+        {
+          "filename": "000478.jpg",
+          "label": "太阳",
+          "game_label": "太阳"
+        }
+      ],
+      "answer": "一飞冲天",
+      "options": [
+        "一飞冲天",
+        "一路顺利",
+        "一帆风顺",
+        "阳光灿烂"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "椅子取“一”，咖啡杯中的“飞”谐音提示“飞”，太阳在天上，组合成“一飞冲天”。",
+      "id": 70
+    },
+    {
+      "type": "homophone_choice",
+      "difficulty": "easy",
+      "symbols": [
+        {
+          "filename": "007793.jpg",
+          "label": "出租车",
+          "game_label": "出租车"
+        },
+        {
+          "filename": "001808.jpg",
+          "label": "门",
+          "game_label": "门"
+        },
+        {
+          "filename": "000556.jpg",
+          "label": "眼睛",
+          "game_label": "眼睛"
+        },
+        {
+          "filename": "001960.jpg",
+          "label": "惊喜",
+          "game_label": "惊喜"
+        }
+      ],
+      "answer": "出门见喜",
+      "options": [
+        "出门见喜",
+        "开门见山",
+        "遇见美好",
+        "笑口常开"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "出租车提示“出”，门表示“门”，眼睛表示“见”，惊喜表示“喜”，组合成“出门见喜”。",
+      "id": 71
+    },
+    {
+      "type": "visual_idiom_choice",
+      "difficulty": "hard",
+      "symbols": [
+        {
+          "filename": "000130.jpg",
+          "label": "对话气泡",
+          "game_label": "对话气泡"
+        },
+        {
+          "filename": "005200.jpg",
+          "label": "牛",
+          "game_label": "牛"
+        },
+        {
+          "filename": "000928.jpg",
+          "label": "音符",
+          "game_label": "音符"
+        }
+      ],
+      "answer": "对牛弹琴",
+      "options": [
+        "对牛弹琴",
+        "无稽之谈",
+        "牛气冲天",
+        "闻鸡起舞"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "对话气泡可提示“对”，牛表示“牛”，音符表示音乐/琴声，组合成“对牛弹琴”。",
+      "id": 72
+    },
+    {
+      "type": "visual_idiom_choice",
+      "difficulty": "hard",
+      "symbols": [
+        {
+          "filename": "000923.jpg",
+          "label": "树木",
+          "game_label": "树木"
+        },
+        {
+          "filename": "000948.jpg",
+          "label": "闹钟",
+          "game_label": "闹钟"
+        },
+        {
+          "filename": "005504.jpg",
+          "label": "兔子",
+          "game_label": "兔子"
+        }
+      ],
+      "answer": "守株待兔",
+      "options": [
+        "守株待兔",
+        "前兔似锦",
+        "兔然暴富",
+        "书山有路"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "树木表示“株”，闹钟表示等待时间，兔子表示“兔”，组合成“守株待兔”。",
+      "id": 73
+    },
+    {
+      "type": "homophone_choice",
+      "difficulty": "hard",
+      "symbols": [
+        {
+          "filename": "002313.jpg",
+          "label": "沙漏",
+          "game_label": "沙漏"
+        },
+        {
+          "filename": "002329.jpg",
+          "label": "无线网络",
+          "game_label": "无线网络"
+        },
+        {
+          "filename": "011185.jpg",
+          "label": "蜘蛛",
+          "game_label": "蜘蛛"
+        },
+        {
+          "filename": "003172.jpg",
+          "label": "鱼",
+          "game_label": "鱼"
+        }
+      ],
+      "answer": "漏网之鱼",
+      "options": [
+        "漏网之鱼",
+        "如鱼得水",
+        "鱼你同行",
+        "网开一面"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "沙漏取“漏”，无线网络表示“网”，蜘蛛取“之”的近音，鱼表示“鱼”，组合成“漏网之鱼”。",
+      "id": 74
+    },
+    {
+      "type": "visual_idiom_choice",
+      "difficulty": "hard",
+      "symbols": [
+        {
+          "filename": "006188.jpg",
+          "label": "笔记本",
+          "game_label": "笔"
+        },
+        {
+          "filename": "005505.jpg",
+          "label": "蛇",
+          "game_label": "蛇"
+        },
+        {
+          "filename": "002723.jpg",
+          "label": "脚印",
+          "game_label": "脚印"
+        }
+      ],
+      "answer": "画蛇添足",
+      "options": [
+        "画蛇添足",
+        "知足常乐",
+        "脚踏实地",
+        "蛇行天下"
+      ],
+      "hint": "根据符号含义和读音联想答案。",
+      "explanation": "笔可表示作画，蛇表示“蛇”，脚印表示“足”，组合成“画蛇添足”。",
+      "id": 75
+    }
+  ]
+}
